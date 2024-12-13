@@ -1,0 +1,23 @@
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+  
+.fejlec{
+  width: 95%;
+  margin: 0 2.5%;
+  border-radius: 0.5em;
+}
+  
+.image-text {
+  position: absolute;
+  bottom: 0.5em;
+  right: 1em;
+  color: white;
+  font-size: 2em;
+  background-color: rgba(0, 0, 0, 0.699);
+  padding: 0.5em;
+  border-radius: 2em;
+}
+
+  
