@@ -15,3 +15,9 @@ function Fekvo() {
 }
 
 export default Fekvo;
+/*
+<Link className='nincsBejelentkezve'>Regisztráció</Link>
+<Link className='nincsBejelentkezve'>Bejelentkezés</Link>
+
+<Link className='beVanJelentkezve'>Kijelentkezés</Link>
+*/

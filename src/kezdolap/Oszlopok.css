@@ -1,114 +1,115 @@
 .korKepKeret{
-    padding: 1.5em;
-    background-color: rgb(194, 52, 52, 0.4);
-    border: 0.5em solid rgba(194, 52, 52, 0.4);
-    border-radius: 1em;
-    width: 21em;
-    
+  padding: 1.5em;
+  background-color: rgb(194, 52, 52, 0.4);
+  border: 0.5em solid rgba(194, 52, 52, 0.4);
+  border-radius: 1em;
+  width: 21em;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.korKep{
+  border-radius: 200em;
+  border: black 1em solid;
+  width: 90%;
+}
+
+.kezd{
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+.row{
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin: 5em;
+}
+
+.szoveg{
+  padding: 5em;
+  font-size: large;
+}
+
+@media (max-width: 767px) {
+  .ketOszlop {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .korKep{
-    border-radius: 200em;
-    border: black 1em solid;
-    width: 90%;
-  }
-  
-  .kezd{
-    text-align: center;
-    text-decoration: none;
-    color: white;
-  }
-  
-  .row{
-    display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: stretch;
     gap: 1em;
-    margin: 5em;
+    padding: 1em;
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  /* Media query kis kijelzőkhöz (max-width: 767px) */
-@media (max-width: 767px) {
-  .two-columns {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: stretch;
-      gap: 1em;
-      padding: 1em;
-      width: 100%; /* Biztosítja, hogy a két oszlop kitöltse az ablak szélességét */
-      box-sizing: border-box; /* A padding is beleszámít a szélességbe */
-  }
-
-  .left, .right {
-      flex: 0;
-      padding: 0.5em;
-      border-radius: 3em 0em;
-      width: 100%; /* Az oszlopok teljes szélességet foglalnak el */
-      box-sizing: border-box;
+  .balOszlop, .jobbOszlop {
+    flex: 0;
+    padding: 0.5em;
+    border-radius: 3em 0em;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .korKepKeret {
-      width: 90%; /* Rugalmasabb konténer méret, hogy ne lógjon ki */
-      max-width: 15em; /* Maximalizálja a konténer szélességét */
-      padding: 1em;
+    width: 90%;
+    max-width: 15em;
+    padding: 1em;
   }
 
   .korKep {
-      width: 80%; /* Kisebb kép méret, hogy beleférjen a konténerbe */
-      border-width: 0.5em; /* Vékonyabb keret */
+    width: 80%;
+    border-width: 0.5em;
   }
 
   .kezd {
-      font-size: 0.8em; /* Kisebb betűméret */
-      text-align: center;
+    font-size: 0.8em;
+    text-align: center;
   }
 }
 
-
-  /* Media query közepes kijelzőkhöz (max-width: 1199px) */
-  @media (max-width: 1199px) {
-    .two-columns {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: stretch;
-        gap: 1em;
-        padding: 1em;
-    }
-    
-    .left, .right {
-        flex: 0;
-    }
-    
-    .left {
-        padding: 1em;
-        background-color: rgb(194, 52, 52, 0.8);
-        border-radius: 3em 0em;
-    }    
+@media (max-width: 1199px) {
+  .ketOszlop {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 1em;
+    padding: 1em;
   }
   
-  /* Media query nagyobb kijelzőkhöz (min-width: 1200px) */
-  @media (min-width: 1200px) {
-    .two-columns {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: stretch;
-        gap: 1em;
-        padding: 1em;
-    }
-    
-    .left, .right {
-        flex: 1; 
-    }
-    
-    .left {
-        padding: 1em;
-        background-color: rgb(194, 52, 52, 0.8);
-        border-radius: 3em 0em;
-    }     
+  .balOszlop, .jobbOszlop {
+    flex: 0;
   }
+  
+  .balOszlop {
+    padding: 1em;
+    background-color: rgb(194, 52, 52, 0.8);
+    border-radius: 3em 0em;
+  }    
+}
+
+@media (min-width: 1200px) {
+  .ketOszlop {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 1em;
+    padding: 1em;
+  }
+  
+  .balOszlop, .jobbOszlop {
+    flex: 1; 
+  }
+  
+  .balOszlop {
+    padding: 1em;
+    background-color: rgb(194, 52, 52, 0.8);
+    border-radius: 3em 0em;
+  }     
+}
