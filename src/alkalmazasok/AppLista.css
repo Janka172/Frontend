@@ -1,0 +1,44 @@
+#kartyak {
+  display: flex;
+  margin: 1vw;
+  gap: 1em;
+  flex-flow: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.korKepKeret{
+  padding: 1.5vw;
+  background-color: rgb(194, 52, 52, 0.4);
+  border: 0.5vw solid rgba(194, 52, 52, 0.4);
+  border-radius: 1vw;
+  margin: 0;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.korKepKeret:hover{
+  background-color: rgba(204, 82, 82, 0.705);
+  transition: background-color 1s;
+  cursor: pointer;
+  transform: translateY(-1vw);
+}
+
+.korKep{
+  border-radius: 200vw;
+  border: black 1vw solid;
+  width: 90%;
+}
+
+.appNeve{
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+.katNeve{
+    font-size: 1.5vw;
+}

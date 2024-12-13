@@ -1,0 +1,39 @@
+@media (max-width: 767px){
+  .keret {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .kisSzuro{
+    display: block;
+  }
+
+  .kisAblak{
+    display: flex;
+    align-items: center;
+  }
+
+  .nagyAblak{
+    display: none;
+  }
+
+}
+
+@media (min-width: 768px){
+  .keret {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+  }
+
+  .kisSzuro {
+    display: none;
+  }
+
+  .kisAblak{
+    display: none;
+  }
+
+  .nagyAblak{
+    display: flex;
+  }
+}

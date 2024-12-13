@@ -1,0 +1,73 @@
+.filter{
+  background-color: rgb(194, 52, 52, 0.5);
+  border-radius: 1vw 0vw 0vw 1vw;
+  padding: 1vw;
+  margin: 1vw;
+  font-size: 1.6vw;
+}
+
+.mezo p, .mezo input{
+  margin: 0;
+  margin-top: 0.1vw;
+  padding: 0;
+}
+
+h1{
+  text-align: right;
+  margin-left: 1vw;
+  font-weight: bold;
+}
+
+input{
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1vw 0vw;
+}
+
+.mezo select, .mezo input{
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+option {
+  background-color: #a1272780;
+}
+
+option:hover{
+  background-color: #a12727da;
+}
+
+.gombocska {
+  margin-top: 2vw;
+  padding: 1vw 2vw;
+  font-size: 3vw;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(194, 52, 52, 0.8);
+  border: none;
+  border-radius: 5vw;
+  cursor: pointer;
+  transition: background-color 0.5s;
+  width: 100%;
+}
+
+.gombocska:hover {
+  background-color: rgba(184, 89, 89, 0.8);
+}
+
+@media (max-width: 767px){
+  .h1 {
+    font-size: 4vw;
+  }
+  .filter{
+    width: 100%;
+  }
+}
+@media (min-width: 768px){
+  .h1 {
+    font-size: 2.1vw;
+  }
+  .filter{
+    position: sticky;
+    top: 5em;
+  }
+}

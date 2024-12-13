@@ -9,7 +9,6 @@ function App() {
     <main>
       <div className="App"> 
         <Oszlopok></Oszlopok>
-        
       </div>
     </main>
     

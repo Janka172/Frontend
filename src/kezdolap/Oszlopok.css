@@ -1,9 +1,9 @@
 .korKepKeret{
-  padding: 1.5em;
+  padding: 1.5vw;
   background-color: rgb(194, 52, 52, 0.4);
-  border: 0.5em solid rgba(194, 52, 52, 0.4);
-  border-radius: 1em;
-  width: 21em;
+  border: 0.5vw solid rgba(194, 52, 52, 0.4);
+  border-radius: 1vw;
+  width: 21vw;
   
   display: flex;
   flex-direction: column;
@@ -11,28 +11,22 @@
   justify-content: center;
 }
 
-.korKep{
-  border-radius: 200em;
-  border: black 1em solid;
-  width: 90%;
+.korKepKeret:hover{
+  background-color: rgba(204, 82, 82, 0.705);
+  transition: background-color 1s;
 }
 
-.kezd{
-  text-align: center;
-  text-decoration: none;
-  color: white;
+.korKep{
+  border-radius: 200vw;
+  border: black 1vw solid;
+  width: 90%;
 }
 
 .row{
   display: flex;
   justify-content: center;
-  gap: 1em;
-  margin: 5em;
-}
-
-.szoveg{
-  padding: 5em;
-  font-size: large;
+  gap: 1vw;
+  margin: 5vw;
 }
 
 @media (max-width: 767px) {
@@ -41,34 +35,39 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    gap: 1em;
-    padding: 1em;
+    gap: 1vw;
+    padding: 1vw;
     width: 100%;
     box-sizing: border-box;
   }
 
   .balOszlop, .jobbOszlop {
     flex: 0;
-    padding: 0.5em;
-    border-radius: 3em 0em;
+    padding: 0.5vw;
+    border-radius: 3vw 0vw;
     width: 100%;
     box-sizing: border-box;
   }
 
   .korKepKeret {
     width: 90%;
-    max-width: 15em;
-    padding: 1em;
+    max-width: 15vw;
+    padding: 1vw;
   }
 
   .korKep {
     width: 80%;
-    border-width: 0.5em;
+    border-width: 0.5vw;
   }
 
   .kezd {
-    font-size: 0.8em;
+    font-size: 0.8vw;
     text-align: center;
+  }
+
+  .szoveg{
+    padding: 5vw;
+    font-size: 5vw;
   }
 }
 
@@ -78,8 +77,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    gap: 1em;
-    padding: 1em;
+    gap: 1vw;
+    padding: 5vw;
   }
   
   .balOszlop, .jobbOszlop {
@@ -87,10 +86,15 @@
   }
   
   .balOszlop {
-    padding: 1em;
+    padding: 1vw;
     background-color: rgb(194, 52, 52, 0.8);
-    border-radius: 3em 0em;
-  }    
+    border-radius: 3vw 0vw;
+  }
+
+  .szoveg{
+    padding: 5vw;
+    font-size: large;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -99,8 +103,8 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: stretch;
-    gap: 1em;
-    padding: 1em;
+    gap: 1vw;
+    padding: 1vw;
   }
   
   .balOszlop, .jobbOszlop {
@@ -108,8 +112,39 @@
   }
   
   .balOszlop {
-    padding: 1em;
+    padding: 1vw;
     background-color: rgb(194, 52, 52, 0.8);
-    border-radius: 3em 0em;
-  }     
+    border-radius: 3vw 0vw;
+  }
+
+  .szoveg{
+    padding: 5vw;
+    font-size: large;
+  }
+}
+
+@media (min-width: 2000px) {
+  .ketOszlop {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 1vw;
+    padding: 1vw;
+  }
+  
+  .balOszlop, .jobbOszlop {
+    flex: 1; 
+  }
+  
+  .balOszlop {
+    padding: 1vw;
+    background-color: rgb(194, 52, 52, 0.8);
+    border-radius: 3vw 0vw;
+  }
+
+  .szoveg{
+    padding: 5vw;
+    font-size: xx-large;
+  }
 }

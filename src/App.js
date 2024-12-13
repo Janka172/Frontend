@@ -4,10 +4,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Kezdolap from './oldalak/Kezdolap';
 import Alkalmazasok from './oldalak/Alkalmazasok';
-import Sidebar from './kezdolap/Sidebar';
-import Fekvo from './kezdolap/Fekvo';
-import Footer from './kezdolap/Footer';
-import ImageWithText from './kezdolap/ImageWithText';
+import Sidebar from './alap/Sidebar';
+import Fekvo from './alap/Fekvo';
+import Footer from './alap/Footer';
+import ImageWithText from './alap/ImageWithText';
 
 
 function App() {

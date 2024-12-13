@@ -1,0 +1,29 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  padding: 0em;
+  background-color: rgb(194, 52, 52, 0.8);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1em;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #d1d1d1;
+  font-size: 1em;
+  padding: 0.5em;
+}
+
+.footer a:hover {
+  color: #000;
+  background-color: #ddd;
+  border-radius: 0.5em;
+}
+  
