@@ -22,21 +22,16 @@
   color: #000;
 }
 
-.nincsBejentkezve, .beVanJelentkezve{
-  
-}
-
-/* Kis képernyőmérethez igazított navigáció */
 @media (max-width: 767px) {
   .navbar {
-      flex-direction: column; /* Elemei egymás alá kerülnek */
-      align-items: center; /* Középre igazítja a linkeket */
-      gap: 0.5em; /* Kisebb hézag a linkek között */
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5em;
   }
 
   .navbar a {
-      font-size: 1em; /* Kisebb betűméret */
-      width: 100%; /* A linkek kitöltik a rendelkezésre álló szélességet */
-      text-align: center; /* A szöveg középre igazítása */
+      font-size: 1em;
+      width: 100%;
+      text-align: center; 
   }
 }

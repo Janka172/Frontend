@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Outlet, Link } from "react-router-dom";
 
 function Sidebar() {
-  // Állapotkezelés az oldalsáv megnyitásához és bezárásához
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const w3_open = () => {
@@ -15,7 +14,6 @@ function Sidebar() {
 
   return (
     <div>
-      {/* Oldalsáv */}
       <div
         className="w3-sidebar w3-bar-block w3-card w3-animate-left menu"
         style={{
@@ -34,7 +32,6 @@ function Sidebar() {
         <Link to="#" className="w3-bar-item w3-button">Új alkatrész</Link>
       </div>
 
-      {/* Fő tartalom */}
       <div
         id="main"
         style={{
