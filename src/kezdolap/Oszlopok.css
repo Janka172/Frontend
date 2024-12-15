@@ -130,7 +130,7 @@
     justify-content: flex-start;
     align-items: stretch;
     gap: 1vw;
-    padding: 1vw;
+    padding: 1vw 10vw;
   }
   
   .balOszlop, .jobbOszlop {
