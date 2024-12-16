@@ -37,7 +37,7 @@ function Szuro() {
         </div>
 
         <div className='mezo'>
-            <p>Kategória:</p>
+            <p>Operációsrendszer:</p>
             <select id='opRendszerCombo'>
               {mindenKategoria.map((opNev) => (<option value={opNev} id={opNev.toLowerCase()}>{opNev}</option>))}
             </select>

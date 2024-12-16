@@ -15,19 +15,19 @@ function App() {
   return (
   <main>
     <BrowserRouter>
-
-    <Sidebar></Sidebar>   
-    <ImageWithText></ImageWithText>
-    <Fekvo></Fekvo>  
-    <Footer></Footer>
+        <Sidebar></Sidebar>   
+        <ImageWithText></ImageWithText>
+        <Fekvo></Fekvo> 
+    
 
         <Routes>
 
             <Route path='/' index element={<Kezdolap />} />
             <Route path='/oldalak/Alkalmazasok' index element={<Alkalmazasok />} />
-            
-          
+              
         </Routes>
+         
+        <Footer></Footer>
       </BrowserRouter>
   </main>
     
