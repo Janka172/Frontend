@@ -1,3 +1,7 @@
+.ketOszlop{
+  margin: 1vw;
+}
+
 .korKepKeret{
   padding: 1.5vw;
   background-color: rgb(194, 52, 52, 0.4);
@@ -49,22 +53,6 @@
     box-sizing: border-box;
   }
 
-  .korKepKeret {
-    width: 90%;
-    max-width: 15vw;
-    padding: 1vw;
-  }
-
-  .korKep {
-    width: 80%;
-    border-width: 0.5vw;
-  }
-
-  .kezd {
-    font-size: 0.8vw;
-    text-align: center;
-  }
-
   .szoveg{
     padding: 5vw;
     font-size: 5vw;
@@ -89,6 +77,7 @@
     padding: 1vw;
     background-color: rgb(194, 52, 52, 0.8);
     border-radius: 3vw 0vw;
+    margin: 3vw;
   }
 
   .szoveg{
