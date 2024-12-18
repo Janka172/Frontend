@@ -22,9 +22,7 @@ function Sidebar() {
         }}
         id="mySidebar"
       >
-        <button className="w3-bar-item w3-button w3-large" onClick={w3_close}>
-          Close &times;
-        </button>
+        <button className="w3-bar-item w3-button w3-large" onClick={w3_close}>Vissza &times;</button>
         <Link to="/oldalak/Alkalmazasok" className="w3-bar-item w3-button">Alkalmazások</Link>
         <Link to="#" className="w3-bar-item w3-button">Alkatrészek</Link>
         <Link to="#" className="w3-bar-item w3-button">Saját setup</Link>
