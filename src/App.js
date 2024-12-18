@@ -15,6 +15,7 @@ function App() {
   return (
   <main>
     <BrowserRouter>
+        <div id='fent'></div>
         <Sidebar></Sidebar>   
         <ImageWithText></ImageWithText>
         <Fekvo></Fekvo> 

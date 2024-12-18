@@ -4,16 +4,16 @@ import './LapTetejere.css';
 function LapTetejere() {
     const [gombSzoveg, setGombSzoveg] = useState("^");
     function kivalsztottSzoveg(){
-        setGombSzoveg("Vissza a lap tetejére !");
+      setGombSzoveg("Vissza a lap tetejére !");
     }
 
     function nemKivalsztottSzoveg(){
-        setGombSzoveg("^");
+      setGombSzoveg("^");
     }
 
   return (
     <div>
-      <button id='fel' onMouseEnter={kivalsztottSzoveg} onMouseLeave={nemKivalsztottSzoveg}>{gombSzoveg}</button>
+      <a href='#fent'><button id='fel' onMouseEnter={kivalsztottSzoveg} onMouseLeave={nemKivalsztottSzoveg}>{gombSzoveg}</button></a>
     </div> 
   );
 }

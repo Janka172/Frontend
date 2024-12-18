@@ -35,10 +35,22 @@
 }
 
 .appNeve{
-    font-size: 3vw;
-    font-weight: bold;
+  font-size: 3vw;
+  font-weight: bold;
 }
 
 .katNeve{
-    font-size: 1.5vw;
+  font-size: 1.5vw;
+}
+
+@media (max-width: 767px){
+  #kartyak{
+    margin-bottom: 8vw;
+  }
+}
+
+@media (min-width: 768px){
+  .korKepKeret{
+    width: 15vw;
+  }
 }

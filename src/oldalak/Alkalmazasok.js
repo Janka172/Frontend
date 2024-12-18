@@ -8,7 +8,7 @@ function Alkalmazasok() {
 
   return (
     <div className="App">    
-         <GridRacs></GridRacs>
+        <GridRacs></GridRacs>
     </div>
     
   );

@@ -1,12 +1,19 @@
 #fel{
-    position: fixed;
-    bottom: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  background-color: #007bff;
+  position: fixed;
+  bottom: 3vw;
+  left: 0.8vw;
+  padding: 0.3vw 0.5vw;
+  background-color: #8c2121;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 15vw;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 2vw;
+  padding: 1vw;
+}
+
+@media (max-width: 767px){
+  #fel{
+    bottom: 8vw;
+  }
 }
