@@ -8,6 +8,7 @@ import Sidebar from './alap/Sidebar';
 import Fekvo from './alap/Fekvo';
 import Footer from './alap/Footer';
 import ImageWithText from './alap/ImageWithText';
+import Alkatreszek from './oldalak/Alkatreszek';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
   <main>
     <BrowserRouter>
         <div id='fent'></div>
-        <Sidebar></Sidebar>   
+        <Sidebar></Sidebar> 
         <ImageWithText></ImageWithText>
         <Fekvo></Fekvo> 
     
@@ -25,6 +26,7 @@ function App() {
 
             <Route path='/' index element={<Kezdolap />} />
             <Route path='/oldalak/Alkalmazasok' index element={<Alkalmazasok />} />
+            <Route path='/oldalak/Alkatreszek' index element={<Alkatreszek />} />
               
         </Routes>
          

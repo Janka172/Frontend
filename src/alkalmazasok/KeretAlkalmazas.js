@@ -1,10 +1,10 @@
 import React from 'react';
-import './GridRacs.css';
+import './KeretAlkalmazas.css';
 import Szuro from './Szuro';
 import AppLista from './AppLista';
 import LapTetejere from './LapTetejere';
 
-function GridRacs() {
+function Keret() {
   return (
     <div>
       {/* Kis ablak méret */}
@@ -30,4 +30,4 @@ function GridRacs() {
   );
 }
 
-export default GridRacs;
+export default Keret;

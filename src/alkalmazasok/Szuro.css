@@ -21,6 +21,11 @@ h1{
 input{
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 1vw 0vw;
+  font-size: 2vw;
+}
+
+select{
+  font-size: 2vw;
 }
 
 .mezo select, .mezo input{

@@ -1,16 +1,11 @@
 import { useState } from 'react';
 import '../App.css';
-import GridRacs from '../alkalmazasok/GridRacs'
-
-
+import Keret from '../alkalmazasok/KeretAlkalmazas.js'
 
 function Alkalmazasok() {
 
   return (
-    <div className="App">    
-        <GridRacs></GridRacs>
-    </div>
-    
+    <Keret></Keret> 
   );
 }
 

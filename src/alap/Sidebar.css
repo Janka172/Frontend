@@ -1,0 +1,65 @@
+.balAnim {
+    position: relative;
+    animation: animateleft 0.4s;
+}
+
+.gombocska:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+.blockSidebar .navigElem {
+    display: block;
+    padding: 0.8vw 1.6vw;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0;
+    font-size: 2vw;
+}
+
+.gombi {
+    border: none;
+    display: inline-block;
+    padding: 0.8vw 1.6vw;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.hambiGombocska {
+    background-color: rgba(255, 0, 0, 0);
+    border: none;
+    padding: 1vw;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2vw;
+    margin: 0.4vw 0.2vw;
+    cursor: pointer;
+  }
+
+.sidebar {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(194, 52, 52, 0.7);
+    position: fixed;
+    z-index: 9999;
+    transition: width 0.4s;
+    top: 0;
+    left: 0;
+    gap: 0.2vw;
+}
+
+.hambiGombocska {
+    cursor: pointer;
+}
+
+.visszaGomb{
+    font-size: 3vw;
+}

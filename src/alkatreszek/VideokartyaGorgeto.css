@@ -1,0 +1,55 @@
+.videokartya {
+    position: relative;
+    width: 80vw;
+    margin: 0 auto;
+}
+
+.vidCim {
+    text-align: left;
+    font-size: 3rem;
+    margin-bottom: 0.1vw;
+    font-weight: bold;
+    letter-spacing: 0.2vw;
+}
+
+.alkatrKeret {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    gap: 1vw;
+}
+
+.korKep {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.alkatNeve {
+    margin-top: 0.1vw;
+    font-size: 2vw;
+}
+
+.balraNyil, .jobbraNyil {
+    position: absolute;
+    top: 50%;
+    font-size: 3vw;
+    background-color: rgb(194, 52, 52, 0.99);
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+    padding: 0.3vw;
+    z-index: 1;
+}
+
+.balraNyil {
+    left: -3vw;
+}
+
+.jobbraNyil {
+    right: -3vw;
+}
+
+@media (max-width: 767px){
+    
+}
