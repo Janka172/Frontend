@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './LapTetejere.css';
+import LapTetejereStilus from './LapTetejere.css';
 
 function LapTetejere() {
     const [gombSzoveg, setGombSzoveg] = useState("^");
@@ -13,7 +13,7 @@ function LapTetejere() {
 
   return (
     <div>
-      <a href='#fent'><button id='fel' onMouseEnter={kivalsztottSzoveg} onMouseLeave={nemKivalsztottSzoveg}>{gombSzoveg}</button></a>
+      <a href='#fent'><button className='fel' onMouseEnter={kivalsztottSzoveg} onMouseLeave={nemKivalsztottSzoveg}>{gombSzoveg}</button></a>
     </div> 
   );
 }

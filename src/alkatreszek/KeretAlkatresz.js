@@ -1,14 +1,17 @@
 import { useState } from 'react';
-import '../App.css';
-import VideokartyaGorgeto from './VideokartyaGorgeto';
+import AppStilus from '../App.css';
+import Gorgeto from './Gorgeto';
 
 function KeretAlkatresz() {
 
   return (
-    <div className='alkatrKeret'>
-      <VideokartyaGorgeto></VideokartyaGorgeto>
-
-      
+    <div className='gorketok'>
+      <Gorgeto tema='Videókártyák'></Gorgeto>
+      <Gorgeto tema='Processzorok'></Gorgeto>
+      <Gorgeto tema='RAM-ok'></Gorgeto>
+      <Gorgeto tema='Operációsrendszerek'></Gorgeto>
+      <Gorgeto tema='Alaplap'></Gorgeto>
+      <Gorgeto tema='Csatlakozók'></Gorgeto>
     </div>
   );
 }

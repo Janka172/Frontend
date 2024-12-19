@@ -1,5 +1,5 @@
 import React from 'react';
-import './AppLista.css';
+import AppListaStilus from './AppLista.css';
 
 function AppLista() {
 
@@ -9,7 +9,7 @@ function AppLista() {
     var Mind=[];
     for(let i=0;i<AppIndex;i++){
         Mind.push(
-            <div className="korKepKeret">
+            <div className="korKepKeret" key={i}>
                 <img src={AppTulajdonsagaok[0].kepEleres} className="korKep" />
                 <h4 className="appNeve">{AppTulajdonsagaok[0].nev}</h4>
                 <h5 className='katNeve'>{AppTulajdonsagaok[0].kat}</h5>
@@ -18,7 +18,7 @@ function AppLista() {
     }
     
   return (
-    <div id="kartyak">
+    <div className="kartyak">
       {Mind.map(x=> (x))}
     </div>
   );

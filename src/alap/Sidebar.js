@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import './Sidebar.css';
+import SidebarStilus from './Sidebar.css';
 
 function Sidebar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);

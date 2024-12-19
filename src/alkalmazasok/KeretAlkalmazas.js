@@ -1,5 +1,5 @@
 import React from 'react';
-import './KeretAlkalmazas.css';
+import KeretAlkalmazasStilus from './KeretAlkalmazas.css';
 import Szuro from './Szuro';
 import AppLista from './AppLista';
 import LapTetejere from './LapTetejere';

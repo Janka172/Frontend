@@ -1,3 +1,7 @@
 .elem{
     display: flex;
 }
+.gorgetok{
+    display: flex;
+    flex-direction: column;
+}

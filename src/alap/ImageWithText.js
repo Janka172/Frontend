@@ -1,5 +1,5 @@
 import React from 'react';
-import './ImageWithText.css'; // CSS fájl importálása
+import ImageWithTextStilus from './ImageWithText.css';
 
 function ImageWithText(){
   return (

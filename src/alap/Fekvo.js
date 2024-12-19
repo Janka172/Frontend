@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './Fekvo.css';
+import FekvoStilus from './Fekvo.css';
 import { Link } from 'react-router-dom';
 
 function Fekvo() {
@@ -15,9 +15,3 @@ function Fekvo() {
 }
 
 export default Fekvo;
-/*
-<Link className='nincsBejelentkezve'>Regisztráció</Link>
-<Link className='nincsBejelentkezve'>Bejelentkezés</Link>
-
-<Link className='beVanJelentkezve'>Kijelentkezés</Link>
-*/

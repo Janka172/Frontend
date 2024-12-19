@@ -1,6 +1,6 @@
 import React from 'react';
-import './Oszlopok.css';
-import '../App.css';
+import OszlopokStilus from './Oszlopok.css';
+import AppStilus from '../App.css';
 import Alkik from './Alkik';
 
 function Oszlopok() {

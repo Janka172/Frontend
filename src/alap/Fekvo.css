@@ -7,6 +7,8 @@
   position: sticky;
   top: 0;
   width: 100%;
+  -ms-zoom-animation: 1000;
+  z-index: 1000;
 }
 
 .navbar a {

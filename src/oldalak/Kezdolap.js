@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../App.css';
+import AppStilus from '../App.css';
 import Oszlopok from '../kezdolap/Oszlopok.js';
 
 

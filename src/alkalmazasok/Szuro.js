@@ -1,5 +1,5 @@
 import React from 'react';
-import './Szuro.css';
+import SzuroStilus from './Szuro.css';
 
 function Szuro() {
   var mindenKategoria=['-','Kategoria 1', 'Kategoria 2', 'Kategoria 3', 'Kategoria 4', 'Kategoria 5', 'Kategoria 5', 'Kategoria 6', 'Kategoria 7', 'Kategoria 8'];
@@ -18,28 +18,28 @@ function Szuro() {
         <div className='mezo'>
             <p>Kategória:</p>
             <select id='kategoriaCombo'>
-              {mindenKategoria.map((katNev) => (<option value={katNev} id={katNev.toLowerCase()}>{katNev}</option>))}
+              {mindenKategoria.map((katNev, index) => (<option value={katNev} key={index} id={katNev.toLowerCase()}>{katNev}</option>))}
             </select>
         </div>
 
         <div className='mezo'>
             <p>Videókártya:</p>
             <select id='videokartyaCombo'>
-              {mindenKategoria.map((vidkNev) => (<option value={vidkNev} id={vidkNev.toLowerCase()}>{vidkNev}</option>))}
+              {mindenKategoria.map((vidkNev, index) => (<option value={vidkNev} key={index} id={vidkNev.toLowerCase()}>{vidkNev}</option>))}
             </select>
         </div>
 
         <div className='mezo'>
             <p>Processzor:</p>
             <select id='processzorCombo'>
-              {mindenKategoria.map((prociNev) => (<option value={prociNev} id={prociNev.toLowerCase()}>{prociNev}</option>))}
+              {mindenKategoria.map((prociNev, index) => (<option value={prociNev} key={index} id={prociNev.toLowerCase()}>{prociNev}</option>))}
             </select>
         </div>
 
         <div className='mezo'>
             <p>Operációsrendszer:</p>
             <select id='opRendszerCombo'>
-              {mindenKategoria.map((opNev) => (<option value={opNev} id={opNev.toLowerCase()}>{opNev}</option>))}
+              {mindenKategoria.map((opNev, index) => (<option value={opNev} key={index} id={opNev.toLowerCase()}>{opNev}</option>))}
             </select>
         </div>
 

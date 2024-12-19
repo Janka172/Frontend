@@ -1,4 +1,4 @@
-#fel{
+.fel{
   position: fixed;
   bottom: 3vw;
   left: 0.8vw;
@@ -13,7 +13,7 @@
 }
 
 @media (max-width: 767px){
-  #fel{
+  .fel{
     bottom: 8vw;
   }
 }
