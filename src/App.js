@@ -7,7 +7,7 @@ import Alkalmazasok from './oldalak/Alkalmazasok';
 import Sidebar from './alap/Sidebar';
 import Fekvo from './alap/Fekvo';
 import Footer from './alap/Footer';
-import ImageWithText from './alap/ImageWithText';
+import ImageWithText from './alap/Borito';
 import Alkatreszek from './oldalak/Alkatreszek';
 
 

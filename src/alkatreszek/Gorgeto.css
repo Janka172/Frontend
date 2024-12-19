@@ -19,11 +19,12 @@
     overflow-x: hidden;
     scroll-behavior: smooth;
     gap: 1vw;
+    height: 21vw;
 }
 
 .korKep {
-    width: 10vw;
-    height: 10vw;
+    width: 8vw;
+    height: 8vw;
     border-radius: 50%;
 }
 
@@ -68,6 +69,44 @@
     background-color: rgba(194, 52, 52, 0.8);
 }
 
+.szuroGomb:hover{
+    background-color: rgba(211, 87, 87, 0.8);
+    transition: background-color 0.8s;
+}
+
+.szuroMenu{
+    background-color: rgb(194, 52, 52, 0.5);
+    margin-top: 1vw;
+    padding: 3vw;
+}
+
+.szuroMenu p{
+    margin: 0;
+    margin-top: 1vw;
+}
+
+input{
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1vw 0vw;
+  font-size: 2vw;
+}
+
+select{
+  font-size: 2vw;
+}
+
+.szuroMenu select, .szuroMenu input{
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+option {
+  background-color: #a1272780;
+}
+
+option:hover{
+  background-color: #a12727da;
+}
 @media (max-width: 767px){
     
 }
