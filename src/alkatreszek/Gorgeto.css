@@ -43,6 +43,7 @@
     cursor: pointer;
     padding: 0.5vw;
     z-index: 1;
+    color: black;
 }
 
 .balraNyil {
@@ -67,6 +68,8 @@
     font-size: 1.5vw;
     border-radius: 0% 30%;
     background-color: rgba(194, 52, 52, 0.8);
+    border: none;
+    color: black;
 }
 
 .szuroGomb:hover{
@@ -109,5 +112,45 @@ option:hover{
   background-color: #a12727da;
 }
 @media (max-width: 767px){
-    
+    .korKep {
+      width: 15vw;
+      height: auto;
+    }
+
+    .alkatNeve {
+      font-size: 4vw;
+    }
+
+    .alkatrKeret{
+        height: 40vw;
+        width: auto;
+    }
+
+    .balraNyil, .jobbraNyil{
+        font-size: 5vw;
+    }
+
+    .szuroGomb{
+        font-size: 4vw;
+    }
+
+    .cim{
+        font-size: 5vw;
+    }
+
+    select{
+        color: black;
+    }
+
+    .szuroMenu p{
+        font-size: 4vw;
+    }
+
+    .szuroMenu select, .szuroMenu input{
+       font-size: 3vw;
+    }
+
+    .szuroMenu input{
+        width: 95%;
+    }
 }

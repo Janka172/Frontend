@@ -35,7 +35,7 @@ function Gorgeto({ tema }) {
         'Operációsrendszerek': [
             { 
             kepEleres: '/kepek/kep.png', 
-            nev: 'Operációsrendszer Neve',
+            nev: 'OP Neve',
             rovidit: 'o',
             }
         ],
@@ -79,20 +79,6 @@ function Gorgeto({ tema }) {
         );
     }
 
-    const gorgetoContainer = useRef(null);
-    const gorgetoLeft = () => {
-        gorgetoContainer.current.scrollBy({
-            top: 0,
-            left: -300,
-        });
-    };
-    const gorgetoRight = () => {
-        gorgetoContainer.current.scrollBy({
-            top: 0,
-            left: 300,
-        });
-    };
-
     var temaAttrik=attribk[tema];
     function eloszoriMegnyitas() {
         if (elsoMegnyitas) {
@@ -104,7 +90,7 @@ function Gorgeto({ tema }) {
                 let vizsgalando=temaAttrik[elem];
                 if (vizsgalando == 'i') {
                     Elemek.push(
-                        <div key={index}>
+                        <div key={vizsgalando + index}>
                             <p className='cimsor'>{elem}</p>
                             <input type='text' />
                         </div>
@@ -112,7 +98,7 @@ function Gorgeto({ tema }) {
                 }
                 if (vizsgalando == 'n') {
                     Elemek.push(
-                        <div key={index}>
+                        <div key={vizsgalando + index}>
                             <p className='cimsor'>{elem}</p>
                             <input type='number' />
                         </div>
@@ -120,7 +106,7 @@ function Gorgeto({ tema }) {
                 }
                 if (vizsgalando == 'c') {
                     Elemek.push(
-                        <div key={index}>
+                        <div key={vizsgalando + index}>
                             <p className='cimsor'>{elem}</p>
                             <select></select>
                         </div>
@@ -136,6 +122,20 @@ function Gorgeto({ tema }) {
         }
         menuMegnyitas();
     }
+
+    const gorgetoContainer = useRef(null);
+    const gorgetoLeft = () => {
+        gorgetoContainer.current.scrollBy({
+            top: 0,
+            left: -300,
+        });
+    };
+    const gorgetoRight = () => {
+        gorgetoContainer.current.scrollBy({
+            top: 0,
+            left: 300,
+        });
+    };
 
     function menuMegnyitas() {
         if (!elemekBetoltve) {

@@ -2,7 +2,7 @@
   position: sticky;
   bottom: 0;
   right: 0;
-  width: 100%;
+  width: auto;
   padding: 0em;
   background-color: rgb(194, 52, 52, 0.8);
   display: flex;
@@ -27,4 +27,3 @@
   background-color: #ddd;
   border-radius: 0.5em;
 }
-  

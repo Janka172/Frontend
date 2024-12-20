@@ -13,9 +13,11 @@ function Sidebar() {
     setSidebarOpen(false);
   };
 
+  const kicsie = window.innerWidth <= 767;
+
   return (
     <div>
-      <div className="sidebar blockSidebar balAnim" style={{width: sidebarOpen ? '25%' : '0', display: sidebarOpen ? 'block' : 'none',}} id="mySidebar">
+      <div className="sidebar blockSidebar balAnim" style={{ width: sidebarOpen ? (kicsie ? '40%' : '25%') : '0', display: sidebarOpen ? 'block' : 'none',}} id="mySidebar">
         <button className="navigElem gombi visszaGomb" onClick={close}>Vissza &times;</button>
         <Link to="/oldalak/Alkalmazasok" className="navigElem gombi">Alkalmazások</Link>
         <Link to="/oldalak/Alkatreszek" className="navigElem gombi">Alkatrészek</Link>

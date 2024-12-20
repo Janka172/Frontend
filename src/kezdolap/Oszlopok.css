@@ -41,7 +41,7 @@
     align-items: stretch;
     gap: 1vw;
     padding: 1vw;
-    width: 100%;
+    width: auto;
     box-sizing: border-box;
   }
 

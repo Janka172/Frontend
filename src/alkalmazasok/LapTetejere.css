@@ -15,5 +15,6 @@
 @media (max-width: 767px){
   .fel{
     bottom: 8vw;
+    font-size: 5vw;
   }
 }

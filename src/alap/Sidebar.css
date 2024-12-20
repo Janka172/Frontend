@@ -3,7 +3,7 @@
     animation: animateleft 0.4s;
 }
 
-.gombocska:hover {
+.gombi:hover {
     color: #000;
     background-color: #ccc;
 }
@@ -17,6 +17,7 @@
     float: none;
     outline: 0;
     font-size: 2vw;
+    gap: 1vw;
 }
 
 .gombi {
@@ -42,6 +43,7 @@
     font-size: 2vw;
     margin: 0.4vw 0.2vw;
     cursor: pointer;
+    color: red;
   }
 
 .sidebar {
@@ -56,10 +58,16 @@
     gap: 0.2vw;
 }
 
-.hambiGombocska {
-    cursor: pointer;
-}
-
 .visszaGomb{
     font-size: 3vw;
+}
+
+@media (max-width: 767px){
+    .hambiGombocska{
+        font-size: 8vw;
+    }
+
+    .blockSidebar .navigElem{
+        font-size: 5vw;
+    }
 }
