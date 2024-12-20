@@ -11,48 +11,70 @@ function Gorgeto({ tema }) {
 
     // Attribútumok különböző témákhoz
     const AlkatTulajdonsagok = {
-        'Videókártyák': { 
+        'Videókártyák': [
+            { 
             kepEleres: '/kepek/kep.png', 
             nev: 'Videokartya Neve',
             rovidit: 'v',
-            Attributumok: { 'Név': 'i', 'Alaplapi Csatlakozás': 'c', 'Ajánlott Tápegyseg': 'c', 'Monitor Csatlakozás': 'c', 'Chip Gyártója': 'c', 'VRAM': 'n' }
-        },
-        'Processzorok': { 
+            }
+        ],
+        'Processzorok': [
+            { 
             kepEleres: '/kepek/kep.png', 
             nev: 'Processzor Neve',
             rovidit: 'p',
-            Attributumok: { 'Név': 'i', 'Szálak Száma': 'n', 'Támogatott Memóriatípus': 'c', 'Gyártó': 'i' }
-        },
-        'RAM-ok': { 
+            }
+        ],
+        'RAM-ok': [
+            { 
             kepEleres: '/kepek/kep.png', 
             nev: 'RAM Neve',
             rovidit: 'r',
-            Attributumok: { 'Név': 'i', 'Memória Típus': 'c', 'Frekvencia': 'n', 'Méret': 'n' }
-        },
-        'Operációsrendszerek': { 
+            }
+        ],
+        'Operációsrendszerek': [
+            { 
             kepEleres: '/kepek/kep.png', 
             nev: 'Operációsrendszer Neve',
             rovidit: 'o',
-            Attributumok: { 'Név': 'i', 'Build Szám': 'n', 'Verzió': 'i' }
-        },
-        'Alaplap': { 
+            }
+        ],
+        'Alaplap': [
+            { 
             kepEleres: '/kepek/kep.png', 
             nev: 'Alaplap Neve',
             rovidit: 'a',
-            Attributumok: { 'Név': 'i', 'CPU Foglalat': 'c', 'Memoria Típusa': 'c', 'Lapkakészlet': 'i' }
-        }
+            }
+        ]
     };
 
-    const temaAdatok = AlkatTulajdonsagok[tema];
+    const attribk={
+        'Videókártyák': {
+             'Név': 'i', 'Alaplapi Csatlakozás': 'c', 'Ajánlott Tápegyseg': 'c', 'Monitor Csatlakozás': 'c', 'Chip Gyártója': 'c', 'VRAM': 'n' }
+            ,
+        'Processzorok': {
+             'Név': 'i', 'Szálak Száma': 'n', 'Támogatott Memóriatípus': 'c', 'Gyártó': 'i' }
+            ,
+        'RAM-ok': { 
+             'Név': 'i', 'Memória Típus': 'c', 'Frekvencia': 'n', 'Méret': 'n' }
+            ,
+        'Operációsrendszerek': { 
+             'Név': 'i', 'Build Szám': 'n', 'Verzió': 'i' }
+            ,
+        'Alaplap': { 
+             'Név': 'i', 'CPU Foglalat': 'c', 'Memoria Típusa': 'c', 'Lapkakészlet': 'i' }
+            
+    }
 
+    const temaAdatok = AlkatTulajdonsagok[tema];
     // Elemlista létrehozása a megadott témához
     const Mind = [];
     const AppIndex = 50;
     for (let i = 0; i < AppIndex; i++) {
         Mind.push(
             <div className="korKepKeret" key={i}>
-                <img src={temaAdatok.kepEleres} className="korKep" alt="Kép" />
-                <h4 className="alkatNeve">{temaAdatok.nev}</h4>
+                <img src={temaAdatok[0].kepEleres} className="korKep" alt="Kép" />
+                <h4 className="alkatNeve">{temaAdatok[0].nev}</h4>
             </div>
         );
     }
@@ -71,15 +93,16 @@ function Gorgeto({ tema }) {
         });
     };
 
+    var temaAttrik=attribk[tema];
     function eloszoriMegnyitas() {
         if (elsoMegnyitas) {
             setelsoMegnyitas(false);
             var Elemek = [];
             var index = 0;
-
-            for (let elem in temaAdatok.Attributumok) {
-                const attrType = temaAdatok.Attributumok[elem];
-                if (attrType === 'i') {
+            
+            for (let elem in temaAttrik) {
+                let vizsgalando=temaAttrik[elem];
+                if (vizsgalando == 'i') {
                     Elemek.push(
                         <div key={index}>
                             <p className='cimsor'>{elem}</p>
@@ -87,7 +110,7 @@ function Gorgeto({ tema }) {
                         </div>
                     );
                 }
-                if (attrType === 'n') {
+                if (vizsgalando == 'n') {
                     Elemek.push(
                         <div key={index}>
                             <p className='cimsor'>{elem}</p>
@@ -95,7 +118,7 @@ function Gorgeto({ tema }) {
                         </div>
                     );
                 }
-                if (attrType === 'c') {
+                if (vizsgalando == 'c') {
                     Elemek.push(
                         <div key={index}>
                             <p className='cimsor'>{elem}</p>
