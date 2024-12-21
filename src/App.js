@@ -9,6 +9,9 @@ import Fekvo from './alap/Fekvo';
 import Footer from './alap/Footer';
 import ImageWithText from './alap/Borito';
 import Alkatreszek from './oldalak/Alkatreszek';
+import AlkalmazasReszletek from './oldalak/AlkalmazasReszletek';
+import AlkatreszReszletek from './oldalak/AlkatreszReszletek.js';
+import Sajat from './sajatSetup/Sajat.js';
 
 
 function App() {
@@ -27,7 +30,10 @@ function App() {
             <Route path='/' index element={<Kezdolap />} />
             <Route path='/oldalak/Alkalmazasok' index element={<Alkalmazasok />} />
             <Route path='/oldalak/Alkatreszek' index element={<Alkatreszek />} />
-              
+            <Route path='/oldalak/AlkalmazasReszletek' index element={<AlkalmazasReszletek />} />
+            <Route path='/oldalak/AlkatreszReszletek' index element={<AlkatreszReszletek />} />
+            <Route path='/oldalak/SajatSetup' index element={<Sajat />} />
+
         </Routes>
          
         <Footer></Footer>

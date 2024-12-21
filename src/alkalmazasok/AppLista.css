@@ -24,7 +24,6 @@
 .korKepKeret:hover{
   background-color: rgba(204, 82, 82, 0.705);
   transition: background-color 1s;
-  cursor: pointer;
   transform: translateY(-0.5vw);
 }
 
@@ -43,9 +42,42 @@
   font-size: 1.5vw;
 }
 
+button:hover{
+  cursor: pointer;
+}
+
+.reszletGomb{
+  padding: 1vw 2vw;
+  margin-right: 1%;
+  margin-left: auto;
+  margin-top: 1vw;
+  margin-bottom: 0.3vw;
+  font-size: 1.5vw;
+  border-radius: 0% 30%;
+  background-color: rgba(194, 52, 52, 0.8);
+  border: none;
+  color: black;
+}
+.reszletGomb:hover{
+  background-color: rgba(216, 108, 108, 0.8);
+}
+
 @media (max-width: 767px){
   #kartyak{
     margin-bottom: 8vw;
+  }
+
+  .appNeve{
+    font-size: 5vw;
+    font-weight: bold;
+  }
+  
+  .katNeve{
+    font-size: 4vw;
+  }
+
+  .reszletGomb{
+    font-size: 3vw;
   }
 }
 

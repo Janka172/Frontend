@@ -17,7 +17,7 @@ function Oszlopok() {
         </div>    
       </div>
       <div className="jobbOszlop">
-        <Alkik egy="App1" ketto="App3" harom="App3" negy="App4"></Alkik>
+        <Alkik></Alkik>
       </div>
     </div>
   );

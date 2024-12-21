@@ -19,12 +19,12 @@
     overflow-x: hidden;
     scroll-behavior: smooth;
     gap: 1vw;
-    height: 21vw;
+    height: 31vw;
 }
 
 .korKep {
-    width: 8vw;
-    height: 8vw;
+    width: 10vw;
+    height: 10vw;
     border-radius: 50%;
 }
 
@@ -111,9 +111,10 @@ option {
 option:hover{
   background-color: #a12727da;
 }
+
 @media (max-width: 767px){
     .korKep {
-      width: 15vw;
+      width: 18vw;
       height: auto;
     }
 
@@ -122,7 +123,7 @@ option:hover{
     }
 
     .alkatrKeret{
-        height: 40vw;
+        height: 50vw;
         width: auto;
     }
 

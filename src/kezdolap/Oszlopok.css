@@ -33,6 +33,10 @@
   margin: 5vw;
 }
 
+.jobbOszlop{
+  justify-content: center;
+}
+
 @media (max-width: 767px) {
   .ketOszlop {
     display: flex;
@@ -108,7 +112,7 @@
 
   .szoveg{
     padding: 5vw;
-    font-size: large;
+    font-size: xx-large;
   }
 }
 

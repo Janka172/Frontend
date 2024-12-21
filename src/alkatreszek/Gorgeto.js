@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import GorgetoStilus from './Gorgeto.css';
+import { Link } from 'react-router-dom';
 
 function Gorgeto({ tema }) {
     const [szuroSzoveg, setSzuroSzoveg] = useState('Szűrő');
@@ -8,14 +9,15 @@ function Gorgeto({ tema }) {
     const [elemekBetoltve, setElemekBetoltve] = useState(false);
     const [nyilakElrejtese, setNyilakElrejtese] = useState({ display: 'block' });
     const [menuElrejtese, setMenuElrejtese] = useState({ display: 'none' });
-
-    // Attribútumok különböző témákhoz
+console.log(tema)
+    // Attribútumok különböző témákhoz : Minden adat
     const AlkatTulajdonsagok = {
         'Videókártyák': [
             { 
             kepEleres: '/kepek/kep.png', 
             nev: 'Videokartya Neve',
             rovidit: 'v',
+            id: '0'
             }
         ],
         'Processzorok': [
@@ -23,6 +25,7 @@ function Gorgeto({ tema }) {
             kepEleres: '/kepek/kep.png', 
             nev: 'Processzor Neve',
             rovidit: 'p',
+            id: '0'
             }
         ],
         'RAM-ok': [
@@ -30,6 +33,7 @@ function Gorgeto({ tema }) {
             kepEleres: '/kepek/kep.png', 
             nev: 'RAM Neve',
             rovidit: 'r',
+            id: '0'
             }
         ],
         'Operációsrendszerek': [
@@ -37,6 +41,7 @@ function Gorgeto({ tema }) {
             kepEleres: '/kepek/kep.png', 
             nev: 'OP Neve',
             rovidit: 'o',
+            id: '0'
             }
         ],
         'Alaplap': [
@@ -44,25 +49,26 @@ function Gorgeto({ tema }) {
             kepEleres: '/kepek/kep.png', 
             nev: 'Alaplap Neve',
             rovidit: 'a',
+            id: '0'
             }
         ]
     };
 
     const attribk={
         'Videókártyák': {
-             'Név': 'i', 'Alaplapi Csatlakozás': 'c', 'Ajánlott Tápegyseg': 'c', 'Monitor Csatlakozás': 'c', 'Chip Gyártója': 'c', 'VRAM': 'n' }
+            'Név': 'i', 'Alaplapi Csatlakozás': 'c', 'Ajánlott Tápegyseg': 'c', 'Monitor Csatlakozás': 'c', 'Chip Gyártója': 'c', 'VRAM': 'n' }
             ,
         'Processzorok': {
-             'Név': 'i', 'Szálak Száma': 'n', 'Támogatott Memóriatípus': 'c', 'Gyártó': 'i' }
+            'Név': 'i', 'Szálak Száma': 'n', 'Támogatott Memóriatípus': 'c', 'Gyártó': 'i' }
             ,
         'RAM-ok': { 
-             'Név': 'i', 'Memória Típus': 'c', 'Frekvencia': 'n', 'Méret': 'n' }
+            'Név': 'i', 'Memória Típus': 'c', 'Frekvencia': 'n', 'Méret': 'n' }
             ,
         'Operációsrendszerek': { 
-             'Név': 'i', 'Build Szám': 'n', 'Verzió': 'i' }
+            'Név': 'i', 'Build Szám': 'n', 'Verzió': 'i' }
             ,
         'Alaplap': { 
-             'Név': 'i', 'CPU Foglalat': 'c', 'Memoria Típusa': 'c', 'Lapkakészlet': 'i' }
+            'Név': 'i', 'CPU Foglalat': 'c', 'Memoria Típusa': 'c', 'Lapkakészlet': 'i' }
             
     }
 
@@ -71,10 +77,12 @@ function Gorgeto({ tema }) {
     const Mind = [];
     const AppIndex = 50;
     for (let i = 0; i < AppIndex; i++) {
+        const adat = {'tipus':temaAdatok[0].rovidit, 'id':temaAdatok[0].id};
         Mind.push(
             <div className="korKepKeret" key={i}>
                 <img src={temaAdatok[0].kepEleres} className="korKep" alt="Kép" />
                 <h4 className="alkatNeve">{temaAdatok[0].nev}</h4>
+                <Link to='/oldalak/AlkatreszReszletek' state={adat}><button className='reszletGomb'>További részletek</button></Link>
             </div>
         );
     }

@@ -13,19 +13,18 @@ function Keret() {
       </div>
       
       {/* Nagy ablak méret */}
-      <div className="keret">
-      <div className="appLista">
-        <AppLista></AppLista>
-      </div>
-      <div className="szuro nagyAblak">
-        <Szuro></Szuro>
+      <div className="nagyKerete">
+        <div className="appLista">
+          <AppLista></AppLista>
+        </div>
+        <div className="szuro nagyAblak">
+          <Szuro></Szuro>
+        </div>
       </div>
 
       <div className='vissza'>
-      <LapTetejere></LapTetejere>
+        <LapTetejere></LapTetejere>
       </div>
-
-    </div>
     </div> 
   );
 }

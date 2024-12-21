@@ -1,5 +1,5 @@
 @media (max-width: 767px){
-  .keret {
+  .nagyKerete {
     display: grid;
     grid-template-columns: 1fr;
     width: auto;
@@ -21,7 +21,7 @@
 }
 
 @media (min-width: 768px){
-  .keret {
+  .nagyKerete {
     display: grid;
     grid-template-columns: 3fr 1fr;
     width: auto;

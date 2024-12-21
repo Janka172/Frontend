@@ -21,7 +21,7 @@ function Sidebar() {
         <button className="navigElem gombi visszaGomb" onClick={close}>Vissza &times;</button>
         <Link to="/oldalak/Alkalmazasok" className="navigElem gombi">Alkalmazások</Link>
         <Link to="/oldalak/Alkatreszek" className="navigElem gombi">Alkatrészek</Link>
-        <Link to="#" className="navigElem gombi">Saját setup</Link>
+        <Link to="/oldalak/SajatSetup" className="navigElem gombi">Saját setup</Link>
         <Link to="#" className="navigElem gombi">Új alkalmazás</Link>
         <Link to="#" className="navigElem gombi">Új alkatrész</Link>
       </div>
