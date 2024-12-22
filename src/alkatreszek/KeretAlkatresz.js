@@ -10,7 +10,7 @@ function KeretAlkatresz() {
       <Gorgeto tema='Processzorok'></Gorgeto>
       <Gorgeto tema='RAM-ok'></Gorgeto>
       <Gorgeto tema='Operációsrendszerek'></Gorgeto>
-      <Gorgeto tema='Alaplap'></Gorgeto>
+      <Gorgeto tema='Alaplapok'></Gorgeto>
     </div>
   );
 }

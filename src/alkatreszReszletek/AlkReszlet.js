@@ -8,7 +8,6 @@ import Vissza from './Vissza';
 function AlkatreszReszletek() {
   const location = useLocation();
   const info = location.state;
-
   //Id alapján megszerzi az adatot
   
   if(info.tipus=='v'){
@@ -72,18 +71,40 @@ function AlkatreszReszletek() {
     
   }
 
-  console.log(info)
-  console.log(adat)
-
   var Mind=[];
   for(var elem in adat){
     if(elem!='tema' && elem!='Név'){
-      Mind.push(
-        <div className='sor' key={elem}>
-          <h2 className='elemNeve'>{elem+':'}</h2>
-          <h2 className='elemErteke'>{adat[elem]}</h2>
-        </div>
-      )
+      if(elem=='Csatlakozók'){
+        var CsatiElemek = [];
+        var csatokSzama = 0;
+        for(var csatlak of adat[elem]){
+            csatokSzama++;
+            var kulcs = 'Csatlakozo' + csatokSzama;
+            CsatiElemek.push(
+              <div className='csatiElem' key={kulcs}>
+                <h2 className='csatiNeve'>{csatlak.Név}</h2> 
+              </div>
+            );
+        }
+
+        Mind.push(
+          <div className='sor' key={elem}>
+              <h2 className='elemNeve'>{elem + ':'}</h2>
+              <div className='csatiLista'>
+                {CsatiElemek.map(x=>x)}
+              </div>
+          </div>
+        );
+
+      }
+      else{
+        Mind.push(
+          <div className='sor' key={elem}>
+            <h2 className='elemNeve'>{elem+':'}</h2>
+            <h2 className='elemErteke'>{adat[elem]}</h2>
+          </div>
+        )
+      }
     }
   }
 
@@ -93,7 +114,8 @@ function AlkatreszReszletek() {
       <div className='conti'>
         {Mind.map(x=>x)}
       </div>
-      <div className='gorg'><Gorgeto tema={adat.tema}></Gorgeto></div> 
+      <Gorgeto tema='Alaplapok'></Gorgeto>
+      
       <Vissza></Vissza>
     </div>
   );

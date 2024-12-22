@@ -9,7 +9,6 @@ function Gorgeto({ tema }) {
     const [elemekBetoltve, setElemekBetoltve] = useState(false);
     const [nyilakElrejtese, setNyilakElrejtese] = useState({ display: 'block' });
     const [menuElrejtese, setMenuElrejtese] = useState({ display: 'none' });
-console.log(tema)
     // Attribútumok különböző témákhoz : Minden adat
     const AlkatTulajdonsagok = {
         'Videókártyák': [
@@ -44,7 +43,7 @@ console.log(tema)
             id: '0'
             }
         ],
-        'Alaplap': [
+        'Alaplapok': [
             { 
             kepEleres: '/kepek/kep.png', 
             nev: 'Alaplap Neve',
@@ -53,24 +52,6 @@ console.log(tema)
             }
         ]
     };
-
-    const attribk={
-        'Videókártyák': {
-            'Név': 'i', 'Alaplapi Csatlakozás': 'c', 'Ajánlott Tápegyseg': 'c', 'Monitor Csatlakozás': 'c', 'Chip Gyártója': 'c', 'VRAM': 'n' }
-            ,
-        'Processzorok': {
-            'Név': 'i', 'Szálak Száma': 'n', 'Támogatott Memóriatípus': 'c', 'Gyártó': 'i' }
-            ,
-        'RAM-ok': { 
-            'Név': 'i', 'Memória Típus': 'c', 'Frekvencia': 'n', 'Méret': 'n' }
-            ,
-        'Operációsrendszerek': { 
-            'Név': 'i', 'Build Szám': 'n', 'Verzió': 'i' }
-            ,
-        'Alaplap': { 
-            'Név': 'i', 'CPU Foglalat': 'c', 'Memoria Típusa': 'c', 'Lapkakészlet': 'i' }
-            
-    }
 
     const temaAdatok = AlkatTulajdonsagok[tema];
     // Elemlista létrehozása a megadott témához
@@ -85,50 +66,6 @@ console.log(tema)
                 <Link to='/oldalak/AlkatreszReszletek' state={adat}><button className='reszletGomb'>További részletek</button></Link>
             </div>
         );
-    }
-
-    var temaAttrik=attribk[tema];
-    function eloszoriMegnyitas() {
-        if (elsoMegnyitas) {
-            setelsoMegnyitas(false);
-            var Elemek = [];
-            var index = 0;
-            
-            for (let elem in temaAttrik) {
-                let vizsgalando=temaAttrik[elem];
-                if (vizsgalando == 'i') {
-                    Elemek.push(
-                        <div key={vizsgalando + index}>
-                            <p className='cimsor'>{elem}</p>
-                            <input type='text' />
-                        </div>
-                    );
-                }
-                if (vizsgalando == 'n') {
-                    Elemek.push(
-                        <div key={vizsgalando + index}>
-                            <p className='cimsor'>{elem}</p>
-                            <input type='number' />
-                        </div>
-                    );
-                }
-                if (vizsgalando == 'c') {
-                    Elemek.push(
-                        <div key={vizsgalando + index}>
-                            <p className='cimsor'>{elem}</p>
-                            <select></select>
-                        </div>
-                    );
-                }
-                index++;
-            }
-            Elemek.push(
-                <button className='gombocska' key='kereses'>Keresés</button>
-            );
-
-            setSzuroMenuje(Elemek);
-        }
-        menuMegnyitas();
     }
 
     const gorgetoContainer = useRef(null);
@@ -163,16 +100,21 @@ console.log(tema)
         <div className='container'>
             <div className='cim_Menu'>
                 <p className='cim'>{tema}</p>
-                <button className='szuroGomb' onClick={eloszoriMegnyitas}>{szuroSzoveg}</button>
+                <button className='szuroGomb' onClick={menuMegnyitas}>{szuroSzoveg}</button>
+            </div>
+            <div className='szuroMenu' style={menuElrejtese}>
+                <div>
+                    <h2>Név:</h2>
+                    <input type='text'></input>
+                </div>
+                <button>Keresés</button>
             </div>
             <div className='alkatrKeret' ref={gorgetoContainer}>
                 {Mind}
                 <button className="balraNyil" onClick={gorgetoLeft} style={nyilakElrejtese}>&#8592;</button>
                 <button className="jobbraNyil" onClick={gorgetoRight} style={nyilakElrejtese}>&#8594;</button>
             </div>
-            <div className='szuroMenu' style={menuElrejtese}>
-                {elemekBetoltve && SzuroMenuje}
-            </div>
+            
         </div>
     );
 }
