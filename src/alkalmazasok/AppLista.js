@@ -11,7 +11,7 @@ function AppLista() {
     for(let i=0; i<AppIndex; i++){
       const adat = { id: AppTulajdonsagaok[0].index };
       Mind.push(
-          <div className="korKepKeret" key={i}>
+          <div className="korKepKeret alKorKepKeret" key={i}>
               <img src={AppTulajdonsagaok[0].kepEleres} className="korKep" />
               <h4 className="appNeve">{AppTulajdonsagaok[0].nev}</h4>
               <h5 className='katNeve'>{AppTulajdonsagaok[0].kat}</h5>

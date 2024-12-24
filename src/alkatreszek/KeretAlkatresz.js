@@ -1,16 +1,18 @@
 import { useState } from 'react';
-import AppStilus from '../App.css';
 import Gorgeto from './Gorgeto';
+import Reszlet from './Reszletek';
+import { useLocation } from 'react-router-dom';
 
 function KeretAlkatresz() {
+  
 
   return (
     <div className='gorketok'>
-      <Gorgeto tema='Videókártyák'></Gorgeto>
-      <Gorgeto tema='Processzorok'></Gorgeto>
-      <Gorgeto tema='RAM-ok'></Gorgeto>
-      <Gorgeto tema='Operációsrendszerek'></Gorgeto>
-      <Gorgeto tema='Alaplapok'></Gorgeto>
+      <Gorgeto tema='Videókártyák' hely='le'></Gorgeto>
+      <Gorgeto tema='Processzorok' hely='le'></Gorgeto>
+      <Gorgeto tema='RAM-ok' hely='le'></Gorgeto>
+      <Gorgeto tema='Operációsrendszerek' hely='le'></Gorgeto>
+      <Gorgeto tema='Alaplapok' hely='le'></Gorgeto>
     </div>
   );
 }

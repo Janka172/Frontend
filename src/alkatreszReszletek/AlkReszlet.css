@@ -1,8 +1,9 @@
 .conti{
-    background-color: rgba(51, 37, 37, 0.473);
-    margin: 2vw;
+    background-color: rgba(51, 37, 37, 0.473); 
     padding: 3.5vw;
     border-radius: 2vw;
+    margin: auto;
+    margin-top: 2vw;
 }
 
 .teljes{
@@ -32,5 +33,15 @@
 
     .sor{
         grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 1500px){
+    .teljes{
+        width: 70%;
+        margin: auto;
+    }
+    .conti{
+        width: 70%;
     }
 }

@@ -5,7 +5,7 @@ import VisszaOsszesitobeStilus from './VisszaOsszesitobe.css';
 function VisszaOsszesitobe() {
 
   return (
-    <Link to='/oldalak/Alkalmazasok'><button className='osszeshez'> &#8592; Vissza az Összesítőbe</button></Link>
+    <Link to='/oldalak/Alkalmazasok'><button className='oszeshez'> &#8592; Vissza az Összesítőbe</button></Link>
   );
 }
 

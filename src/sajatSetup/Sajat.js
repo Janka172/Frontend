@@ -150,33 +150,33 @@ function Sajat() {
   }
 
   return (
-    <div>
+    <div className='teljesSajat'>
       <div className='kivalasztottak'>
         <h1>Kiválasztott alkatrészek</h1>
 
         <div className='sor'>
-          <h2>Videókártya:</h2>
-          <h2>{kivVideokartya.nev}</h2>
+          <h2 className='soreCime'>Videókártya:</h2>
+          <h2 className='soreCime'>{kivVideokartya.nev}</h2>
         </div>
 
         <div className='sor'>
-          <h2>Processzor:</h2>
-          <h2>{kivProcesszor.nev}</h2>
+          <h2 className='soreCime'>Processzor:</h2>
+          <h2 className='soreCime'>{kivProcesszor.nev}</h2>
         </div>
 
         <div className='sor'>
-          <h2>Operációsrendszer:</h2>
-          <h2>{kivOpRendszer.nev}</h2>
+          <h2 className='soreCime'>Operációsrendszer:</h2>
+          <h2 className='soreCime'>{kivOpRendszer.nev}</h2>
         </div>
 
         <div className='sor'>
-          <h2>Ram:</h2>
-          <h2>{kivRam.nev}</h2>
+          <h2 className='soreCime'>Ram:</h2>
+          <h2 className='soreCime'>{kivRam.nev}</h2>
         </div>
 
         <div className='sor'>
-          <h2>Alaplap:</h2>
-          <h2>{kivAlaplap.nev}</h2>
+          <h2 className='soreCime'>Alaplap:</h2>
+          <h2 className='soreCime'>{kivAlaplap.nev}</h2>
         </div>
         <button className='szur' onClick={listazas}>Futtatható Alkalmazások Megjelenítése</button>
       </div>
@@ -193,35 +193,35 @@ function Sajat() {
         <h1>Kiválasztható alkatrészek</h1>
 
         <div className='kivSor'>
-          <h2>Videókártya:</h2>
+          <h2 className='soreCime'>Videókártya:</h2>
           <select className='combo' onChange={valtozoVidk}>{mindenVideokartya.map(x=><option key={x.id} value={x.nev}>{x.nev}</option>)}</select>
           <button className='sajGomb' onClick={kivalasztVidk}>Hozzáadás</button>
           <Link to='/oldalak/AlkatreszReszletek' state={{'tipus':'v', 'id':aktuVideokartya.id}}><button className='sajGomb'>További részletek</button></Link>
         </div>
 
         <div className='kivSor'>
-          <h2>Processzor:</h2>
+          <h2 className='soreCime'>Processzor:</h2>
           <select className='combo' onChange={valtozoProc}>{mindenProcesszor.map(x=><option key={x.id} value={x.nev}>{x.nev}</option>)}</select>
           <button className='sajGomb' onClick={kivalasztProc}>Hozzáadás</button>
           <Link to='/oldalak/AlkatreszReszletek' state={{'tipus':'p', 'id':aktuProcesszor.id}}><button className='sajGomb'>További részletek</button></Link>
         </div>
 
         <div className='kivSor'>
-          <h2>Operációsrendszer:</h2>
+          <h2 className='soreCime'>Operációsrendszer:</h2>
           <select className='combo' onChange={valtozoOpRend}>{mindenOpRendszer.map(x=><option key={x.id} value={x.nev}>{x.nev}</option>)}</select>
           <button className='sajGomb' onClick={kivalasztOpRend}>Hozzáadás</button>
           <Link to='/oldalak/AlkatreszReszletek' state={{'tipus':'o', 'id':aktuOpRendszer.id}}><button className='sajGomb'>További részletek</button></Link>
         </div>
 
         <div className='kivSor'>
-          <h2>Ram:</h2>
+          <h2 className='soreCime'>Ram:</h2>
           <select className='combo' onChange={valtozoRam}>{mindenRam.map(x=><option key={x.id} value={x.nev}>{x.nev}</option>)}</select>
           <button className='sajGomb' onClick={kivalasztRam}>Hozzáadás</button>
           <Link to='/oldalak/AlkatreszReszletek' state={{'tipus':'r', 'id':aktuRam.id}}><button className='sajGomb'>További részletek</button></Link>
         </div>
 
         <div className='kivSor'>
-          <h2>Alaplap:</h2>
+          <h2 className='soreCime'>Alaplap:</h2>
           <select className='combo' onChange={valtozoAlaplap}>{mindenAlaplap.map(x=><option key={x.id} value={x.nev}>{x.nev}</option>)}</select>
           <button className='sajGomb' onClick={kivalasztAlaplap}>Hozzáadás</button>
           <Link to='/oldalak/AlkatreszReszletek' state={{'tipus':'a', 'id':aktuAlaplap.id}}><button className='sajGomb'>További részletek</button></Link>

@@ -1,4 +1,4 @@
-.osszeshez{
+.oszeshez{
     position: fixed;
     left: 1vw;
     bottom: 3vw;
@@ -20,5 +20,11 @@
     .osszeshez{
         bottom: 10vw;
         font-size: 4vw;
+    }
+}
+
+@media (min-width: 1500px){
+    .oszeshez{
+        font-size: 1vw;
     }
 }

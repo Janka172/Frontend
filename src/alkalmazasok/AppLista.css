@@ -30,7 +30,7 @@
 .korKep{
   border-radius: 200vw;
   border: black 1vw solid;
-  width: 90%;
+  width: 70%;
 }
 
 .appNeve{
@@ -82,7 +82,28 @@ button:hover{
 }
 
 @media (min-width: 768px){
-  .korKepKeret{
+  .alKorKepKeret{
     width: 15vw;
+  }
+}
+
+@media (min-width: 1500px){
+  .korKep{
+    width: 60%;
+  }
+  
+  .appNeve{
+    font-size: 2vw;
+    font-weight: bold;
+  }
+  
+  .katNeve{
+    font-size: 1vw;
+  }  
+  
+  .reszletGomb{
+    padding: 1vw;
+    margin:0vw;
+    
   }
 }

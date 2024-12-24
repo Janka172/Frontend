@@ -114,7 +114,7 @@ option:hover{
 }
 
 @media (min-width: 768px){
-  .h1 {
+  h1 {
     font-size: 2.1vw;
   }
   .filter{
@@ -126,5 +126,14 @@ option:hover{
   }
   .kisMeret{
     display: none;
+  }
+}
+
+@media (min-width: 1500px){
+  .nagyMeret h1 {
+    font-size: 2vw;
+  }
+  .gombocska{
+    font-size: 1vw;
   }
 }

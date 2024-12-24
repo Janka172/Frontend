@@ -97,4 +97,22 @@
         width: 90%;
         font-size: 3vw;
     }
+
+    .soreCime{
+        font-size: 4.5vw;
+    }
 }
+
+@media (min-width: 1500px){
+    .teljesSajat{
+        width: 70%;
+        margin: auto;
+    }
+
+    .sajGomb{
+        padding: 0vw 1vw;
+        font-size: 1vw;
+
+    }
+}
+

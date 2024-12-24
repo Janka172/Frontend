@@ -24,17 +24,19 @@ function App() {
         <ImageWithText></ImageWithText>
         <Fekvo></Fekvo> 
     
-
+        <div className='Tartalmak'>
         <Routes>
 
-            <Route path='/' index element={<Kezdolap />} />
-            <Route path='/oldalak/Alkalmazasok' index element={<Alkalmazasok />} />
-            <Route path='/oldalak/Alkatreszek' index element={<Alkatreszek />} />
-            <Route path='/oldalak/AlkalmazasReszletek' index element={<AlkalmazasReszletek />} />
-            <Route path='/oldalak/AlkatreszReszletek' index element={<AlkatreszReszletek />} />
-            <Route path='/oldalak/SajatSetup' index element={<Sajat />} />
+          <Route path='/' index element={<Kezdolap />} />
+          <Route path='/oldalak/Alkalmazasok' index element={<Alkalmazasok />} />
+          <Route path='/oldalak/Alkatreszek' index element={<Alkatreszek />} />
+          <Route path='/oldalak/AlkalmazasReszletek' index element={<AlkalmazasReszletek />} />
+          <Route path='/oldalak/AlkatreszReszletek' index element={<AlkatreszReszletek />} />
+          <Route path='/oldalak/SajatSetup' index element={<Sajat />} />
 
-        </Routes>
+          </Routes>
+        </div>
+        
          
         <Footer></Footer>
       </BrowserRouter>

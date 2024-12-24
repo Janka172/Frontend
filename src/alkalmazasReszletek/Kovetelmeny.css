@@ -7,7 +7,7 @@
 
 .sor{
     display: grid;
-    grid-template-columns: 1fr 1fr 0.3fr;
+    grid-template-columns: 1fr 1fr 0.5fr;
     border-bottom: 1px rgba(184, 70, 70, 0.8) solid;
 }
 
@@ -50,7 +50,7 @@ h1{
       display: grid;
       grid-template-columns: 7fr 3fr;
     }
-    
+
     .megnev {
       grid-column: 1 / 2;
     }
@@ -65,4 +65,11 @@ h1{
     h1{
         font-size: 6vw;
     }    
+}
+
+@media (min-width: 1500px){
+    .tovabbi{
+        margin: 1vw;
+        font-size: 1vw;
+    }
 }

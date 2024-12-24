@@ -49,7 +49,6 @@ function AppReszlet() {
   return (
     <div className='keret'>
         <div className='tartalom'>
-
             <div className='oszlopok'>
                 <div className='balOSzlop'>
                     <h1 className='appNev'>{kivalasztottApp.nev}</h1>

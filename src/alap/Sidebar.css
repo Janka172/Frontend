@@ -71,3 +71,9 @@
         font-size: 5vw;
     }
 }
+
+@media (min-width: 1500px){
+    .blockSidebar .navigElem{
+        font-size: 1.5vw;
+    }
+}
