@@ -103,16 +103,3 @@
     }
 }
 
-@media (min-width: 1500px){
-    .teljesSajat{
-        width: 70%;
-        margin: auto;
-    }
-
-    .sajGomb{
-        padding: 0vw 1vw;
-        font-size: 1vw;
-
-    }
-}
-

@@ -1,0 +1,4 @@
+!!!
+    Alkalmazások: Szűrő
+    Alkalmazások: Részeltek
+    Saját: Futtatható

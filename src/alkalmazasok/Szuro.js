@@ -4,30 +4,66 @@ import SzuroStilus from './Szuro.css';
 function Szuro() {
   // Adatbázisból kinyert: nevek
   const [mindenKategoria, setMindenKategoria] = useState([]);
-  const [loadingK, setLoadingK] = useState(true);
-
-  var mindenVideokartya = ['-', 'Videokartya 1', 'Videokartya 2', 'Videokartya 3', 'Videokartya 4', 'Videokartya 5', 'Videokartya 5', 'Videokartya 6', 'Videokartya 7', 'Videokartya 8'];
-  var mindenProcesszor = ['-', 'Processzor 1', 'Processzor 2', 'Processzor 3', 'Processzor 4', 'Processzor 5', 'Processzor 5', 'Processzor 6', 'Processzor 7', 'Processzor 8'];
-  var mindenOpRendszer = ['-', 'OpRendszer 1', 'OpRendszer 2', 'OpRendszer 3', 'OpRendszer 4', 'OpRendszer 5', 'OpRendszer 5', 'OpRendszer 6', 'OpRendszer 7', 'OpRendszer 8'];
+  const [betoltK, setBetoltK] = useState(true);
+  const [mindenVideokartya, setMindenVideokartya] = useState([]);
+  const [betoltV, setBetoltV] = useState(true);
+  const [mindenProcesszor, setMindenProcesszor] = useState([]);
+  const [betoltP, setBetoltP] = useState(true);
+  const [mindenOpRendszer, setMindenOpRendszer] = useState([]);
+  const [betoltO, setBetoltO] = useState(true);
 
   // A kategoria adatok lekérése
   async function getMindenKategoria() {
     try {
       const response = await fetch("https://localhost:44316/api/Kategoria");
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
       const data = await response.json();
-      setMindenKategoria(data);  // Frissítjük a state-et
-      setLoadingK(false);  // Beállítjuk, hogy az adatok betöltődtek
+      setMindenKategoria(data);
+      setBetoltK(false);
     } catch (error) {
-      console.error('Unable to get items.', error);
+      console.error(error);
     }
   }
-  useEffect(() => {
-    getMindenKategoria();  // Az API hívás az adatok betöltéséhez
-  }, []);  // Csak egyszer fut le, amikor a komponens betöltődik
+  useEffect(() => { getMindenKategoria(); }, []);
+
+  // A vidókártya adatok lekérése
+  async function getMindenVideokartya() {
+    try {
+      const response = await fetch("https://localhost:44316/api/Videokartya");
+      const data = await response.json();
+      setMindenVideokartya(data);
+      setBetoltV(false);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  useEffect(() => { getMindenVideokartya(); }, []);
+
+  // A processzor adatok lekérése
+  async function getMindenProcesszor() {
+    try {
+      const response = await fetch("https://localhost:44316/api/Processzor");
+      const data = await response.json();
+      setMindenProcesszor(data);
+      setBetoltP(false);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  useEffect(() => { getMindenProcesszor(); }, []);
+
+  // A Op rendsze4r adatok lekérése
+  async function getMindenOpRendszer() {
+    try {
+      const response = await fetch("https://localhost:44316/api/Oprendszer");
+      const data = await response.json();
+      setMindenOpRendszer(data);
+      setBetoltO(false);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  useEffect(() => { getMindenOpRendszer(); }, []);
+  
 
   const [nev, setNev] = useState('');
   const [kategoria, setKategoria] = useState('-');
@@ -96,32 +132,40 @@ function Szuro() {
       <div className='mezo' style={{ display: displ }}>
         <p>Kategória:</p>
         <select id='kategoriaCombo' value={kategoria} onChange={(e) => setKategoria(e.target.value)}>
-          {loadingK ? (<option>Betöltés...</option>) : (
+          {betoltK ? (<option>Betöltés...</option>) : (
             mindenKategoria.map((kat, index) => (
               <option value={kat.Nev} key={index}>{kat.Nev}</option> 
-            ))
-          )}
+            )))}
         </select>
       </div>
 
       <div className='mezo' style={{ display: displ }}>
         <p>Videókártya:</p>
         <select id='videokartyaCombo' value={videokartya} onChange={(e) => setVideokartya(e.target.value)}>
-          {mindenVideokartya.map((vidkNev, index) => (<option value={vidkNev} key={index}>{vidkNev}</option>))}
+          {betoltV ? (<option>Betöltés...</option>) : (
+            mindenVideokartya.map((vid, index) => (
+              <option value={vid.Nev} key={index}>{vid.Nev}</option> 
+            )))}
         </select>
       </div>
 
       <div className='mezo' style={{ display: displ }}>
         <p>Processzor:</p>
         <select id='processzorCombo' value={processzor} onChange={(e) => setProcesszor(e.target.value)}>
-          {mindenProcesszor.map((prociNev, index) => (<option value={prociNev} key={index}>{prociNev}</option>))}
+          {betoltP ? (<option>Betöltés...</option>) : (
+            mindenProcesszor.map((proc, index) => (
+              <option value={proc.Nev} key={index}>{proc.Nev}</option> 
+            )))}
         </select>
       </div>
 
       <div className='mezo' style={{ display: displ }}>
         <p>Operációs rendszer:</p>
         <select id='opRendszerCombo' value={opRendszer} onChange={(e) => setOpRendszer(e.target.value)}>
-          {mindenOpRendszer.map((opNev, index) => (<option value={opNev} key={index}>{opNev}</option>))}
+        {betoltO ? (<option>Betöltés...</option>) : (
+            mindenOpRendszer.map((op, index) => (
+              <option value={op.Nev} key={index}>{op.Nev}</option> 
+            )))}
         </select>
       </div>
 

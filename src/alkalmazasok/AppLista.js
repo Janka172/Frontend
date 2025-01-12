@@ -1,28 +1,46 @@
 import React from 'react';
 import AppListaStilus from './AppLista.css';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 function AppLista() {
+  var atmenetiKepLink='/kepek/kep.png';
 
-    //Adatbázisból származatat
-    var AppIndex=50;
-    var AppTulajdonsagaok=[{'kepEleres':'/kepek/kep.png', 'nev':'Progi Neve', 'kat':'Kategória Neve', 'id':'0'}];
+    //Minden app adata
+    const [mindenApp, setMindenApp] = useState([]);
+    const [betoltA, setBetoltA] = useState(true);
+    async function getMindenApp() {
+      try {
+        const response = await fetch("https://localhost:44316/api/Applikacio");
+        const data = await response.json();
+        setMindenApp(data);
+        setBetoltA(false);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    useEffect(() => { getMindenApp(); }, []);
+    
     var Mind=[];
-    for(let i=0; i<AppIndex; i++){
-      const adat = { id: AppTulajdonsagaok[0].index };
-      Mind.push(
-          <div className="korKepKeret alKorKepKeret" key={i}>
-              <img src={AppTulajdonsagaok[0].kepEleres} className="korKep" />
-              <h4 className="appNeve">{AppTulajdonsagaok[0].nev}</h4>
-              <h5 className='katNeve'>{AppTulajdonsagaok[0].kat}</h5>
-              <Link to='/oldalak/AlkalmazasReszletek' state={adat}><button className='reszletGomb'>További részletek</button></Link>
-          </div>
-      )        
+    function mindenElemBetoltese(){
+      var AppIndex=mindenApp.length;
+      for(let i=0; i<AppIndex; i++){
+        const adat = { id: mindenApp[i].Id };
+        Mind.push(
+            <div className="korKepKeret alKorKepKeret" key={i}>
+                <img src={atmenetiKepLink} className="korKep" />
+                <h4 className="appNeve">{mindenApp[i].Nev}</h4>
+                <h5 className='katNeve'>{mindenApp[i].kategoriaNev}</h5>
+                <Link to='/oldalak/AlkalmazasReszletek' state={adat}><button className='reszletGomb'>További részletek</button></Link>
+            </div>
+        )        
+      }
+      return Mind.map(x=> (x));
     }
     
   return (
     <div className="kartyak">
-      {Mind.map(x=> (x))}
+      {betoltA ? console.log('Betöltés folyamatban !') : mindenElemBetoltese()}
     </div>
   );
 }
