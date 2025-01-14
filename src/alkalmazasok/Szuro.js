@@ -112,6 +112,17 @@ function Szuro() {
     setOpRendszer('-');
     setRam('');
     setTarhely('');
+
+    var adatok = {
+      nev: '',
+      kategoria: '-',
+      videokartya: '-',
+      processzor: '-',
+      opRendszer: '-',
+      ram: '',
+      tarhely: '',
+    };
+    setKeresesiAdatok(adatok);
   }
 
   const { setKeresesiAdatok } = useKeresesiAdatok();
