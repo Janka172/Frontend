@@ -1,13 +1,27 @@
 import React, { useState, useEffect } from 'react';
-import { useKeresesiAdatok } from './KeresesiAdatokContext';  // Importáljuk a useKeresesiAdatok hook-ot
+import { useKeresesiAdatok } from './KeresesiAdatokContext';
 import { Link } from 'react-router-dom';
 import AppListaStilus from './AppLista.css';
 
 function AppLista() {
-  const { keresesiAdatok } = useKeresesiAdatok();  // Az adatok elérése
-
   var atmenetiKepLink = '/kepek/kep.png';
-  console.log(keresesiAdatok);  // Itt látjuk az exportált adatokat
+  
+  const [nincsFeltetel, setNincsFeltetel] = useState(false);
+  const  feltetel  = useKeresesiAdatok();
+  useEffect(() => {
+    if (
+      feltetel.keresesiAdatok.nev == '' &&
+      feltetel.keresesiAdatok.kategoria == '-' &&
+      feltetel.keresesiAdatok.opRendszer == '-' &&
+      feltetel.keresesiAdatok.processzor == '-' &&
+      feltetel.keresesiAdatok.ram == '' &&
+      feltetel.keresesiAdatok.tarhely == '' &&
+      feltetel.keresesiAdatok.videokartya == '-'
+    ){
+      setNincsFeltetel(true);
+    }
+  }, [feltetel]);
+  console.log(feltetel.keresesiAdatok);
 
   const [mindenApp, setMindenApp] = useState([]);
   const [betoltA, setBetoltA] = useState(true);
@@ -22,10 +36,19 @@ function AppLista() {
       console.error(error);
     }
   }
-
   useEffect(() => {
     getMindenApp();
   }, []);
+
+  var adatok=feltetel.keresesiAdatok;
+  function betoltesKezelo(){
+    //Nincs feltétel
+    if (
+      adatok.nev == ''
+    ){
+      mindenElemBetoltese();
+    }
+  }
 
   var Mind = [];
   function mindenElemBetoltese() {
@@ -48,7 +71,7 @@ function AppLista() {
 
   return (
     <div className="kartyak">
-      {betoltA ? console.log('Betöltés folyamatban !') : mindenElemBetoltese()}
+      {betoltA && nincsFeltetel ? console.log('Betöltés folyamatban !') : mindenElemBetoltese()}
     </div>
   );
 }

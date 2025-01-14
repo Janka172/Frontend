@@ -114,7 +114,7 @@ function Szuro() {
     setTarhely('');
   }
 
-
+  const { setKeresesiAdatok } = useKeresesiAdatok();
   function keres(){
     console.log('Keresés fut !');
 
@@ -128,7 +128,7 @@ function Szuro() {
       tarhely: tarhely,
     };
     
-    //console.log(adatok)
+    setKeresesiAdatok(adatok);
   }
 
   return (
