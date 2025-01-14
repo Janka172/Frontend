@@ -2,3 +2,5 @@
     Alkalmazások: Szűrő
     Alkalmazások: Részeltek
     Saját: Futtatható
+
+Szűrő: kis méretről nagyra váltás ?!
