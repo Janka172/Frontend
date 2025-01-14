@@ -113,6 +113,12 @@ function Szuro() {
     setTarhely('');
   }
 
+  function keres(){
+    console.log('Keresés fut !');
+    document.getElementById('nevInput')
+    console.log(nev)
+  }
+
   return (
     <div className='filter' style={{ backgroundColor: hatter }}>
       <div>
@@ -126,7 +132,7 @@ function Szuro() {
 
       <div className='mezo' style={{ display: displ }}>
         <p>Név:</p>
-        <input type='text' value={nev} onChange={(e) => setNev(e.target.value)} />
+        <input type='text' id="nevInput" value={nev} onChange={(e) => setNev(e.target.value)} />
       </div>
 
       <div className='mezo' style={{ display: displ }}>
@@ -179,7 +185,7 @@ function Szuro() {
         <input type='number' value={tarhely} onChange={(e) => setTarhely(e.target.value)} />
       </div>
 
-      <button className='gombocska' style={{ display: displ }}>Keresés</button>
+      <button className='gombocska' style={{ display: displ }} onClick={keres}>Keresés</button>
       <button className='gombocska' style={{ display: displ }} onClick={mezokTorlese}>Mégsem</button>
     </div>
   );

@@ -29,8 +29,8 @@ function AppLista() {
         Mind.push(
             <div className="korKepKeret alKorKepKeret" key={i}>
                 <img src={atmenetiKepLink} className="korKep" />
-                <h4 className="appNeve">{mindenApp[i].Nev}</h4>
-                <h5 className='katNeve'>{mindenApp[i].kategoriaNev}</h5>
+                <h4 className="appNeve">{mindenApp[i].AppNev}</h4>
+                <h5 className='katNeve'>{mindenApp[i].KategoriaNev}</h5>
                 <Link to='/oldalak/AlkalmazasReszletek' state={adat}><button className='reszletGomb'>További részletek</button></Link>
             </div>
         )        
