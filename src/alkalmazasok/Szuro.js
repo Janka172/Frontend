@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SzuroStilus from './Szuro.css';
+import { useKeresesiAdatok } from './KeresesiAdatokContext';
 
 function Szuro() {
   // Adatbázisból kinyert: nevek
@@ -113,10 +114,21 @@ function Szuro() {
     setTarhely('');
   }
 
+
   function keres(){
     console.log('Keresés fut !');
-    document.getElementById('nevInput')
-    console.log(nev)
+
+    var adatok = {
+      nev: nev,
+      kategoria: kategoria,
+      videokartya: videokartya,
+      processzor: processzor,
+      opRendszer: opRendszer,
+      ram: ram,
+      tarhely: tarhely,
+    };
+    
+    //console.log(adatok)
   }
 
   return (
@@ -138,6 +150,7 @@ function Szuro() {
       <div className='mezo' style={{ display: displ }}>
         <p>Kategória:</p>
         <select id='kategoriaCombo' value={kategoria} onChange={(e) => setKategoria(e.target.value)}>
+         <option value='-' key='-1'>-</option>
           {betoltK ? (<option>Betöltés...</option>) : (
             mindenKategoria.map((kat, index) => (
               <option value={kat.Nev} key={index}>{kat.Nev}</option> 
@@ -148,6 +161,7 @@ function Szuro() {
       <div className='mezo' style={{ display: displ }}>
         <p>Videókártya:</p>
         <select id='videokartyaCombo' value={videokartya} onChange={(e) => setVideokartya(e.target.value)}>
+         <option value='-' key='-1'>-</option>
           {betoltV ? (<option>Betöltés...</option>) : (
             mindenVideokartya.map((vid, index) => (
               <option value={vid.Nev} key={index}>{vid.Nev}</option> 
@@ -158,6 +172,7 @@ function Szuro() {
       <div className='mezo' style={{ display: displ }}>
         <p>Processzor:</p>
         <select id='processzorCombo' value={processzor} onChange={(e) => setProcesszor(e.target.value)}>
+          <option value='-' key='-1'>-</option>
           {betoltP ? (<option>Betöltés...</option>) : (
             mindenProcesszor.map((proc, index) => (
               <option value={proc.Nev} key={index}>{proc.Nev}</option> 
@@ -168,7 +183,8 @@ function Szuro() {
       <div className='mezo' style={{ display: displ }}>
         <p>Operációs rendszer:</p>
         <select id='opRendszerCombo' value={opRendszer} onChange={(e) => setOpRendszer(e.target.value)}>
-        {betoltO ? (<option>Betöltés...</option>) : (
+          <option value='-' key='-1'>-</option>
+          {betoltO ? (<option>Betöltés...</option>) : (
             mindenOpRendszer.map((op, index) => (
               <option value={op.Nev} key={index}>{op.Nev}</option> 
             )))}

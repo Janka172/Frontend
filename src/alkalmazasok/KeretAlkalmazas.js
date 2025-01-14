@@ -3,29 +3,32 @@ import KeretAlkalmazasStilus from './KeretAlkalmazas.css';
 import Szuro from './Szuro';
 import AppLista from './AppLista';
 import LapTetejere from './LapTetejere';
+import { KeresesiAdatokProvider } from './KeresesiAdatokContext'; // Importáljuk a Provider-t
 
 function Keret() {
   return (
-    <div>
-      {/* Kis ablak méret */}
-      <div className='kisAblak'>
-        <Szuro></Szuro>
-      </div>
-      
-      {/* Nagy ablak méret */}
-      <div className="nagyKerete">
-        <div className="appLista">
-          <AppLista></AppLista>
-        </div>
-        <div className="szuro nagyAblak">
+    <KeresesiAdatokProvider> {/* A keresési adatok körbevonása a Provider-rel */}
+      <div>
+        {/* Kis ablak méret */}
+        <div className='kisAblak'>
           <Szuro></Szuro>
         </div>
-      </div>
+        
+        {/* Nagy ablak méret */}
+        <div className="nagyKerete">
+          <div className="appLista">
+            <AppLista></AppLista>
+          </div>
+          <div className="szuro nagyAblak">
+            <Szuro></Szuro>
+          </div>
+        </div>
 
-      <div className='vissza'>
-        <LapTetejere></LapTetejere>
+        <div className='vissza'>
+          <LapTetejere></LapTetejere>
+        </div>
       </div>
-    </div> 
+    </KeresesiAdatokProvider>
   );
 }
 
