@@ -23,6 +23,7 @@ function AppLista() {
       setMindenApp(data);
       setSzurtApp(data);
       setBetoltA(false);
+      console.log(mindenApp)
     } catch (error) {
       console.error(error);
     }
@@ -68,8 +69,64 @@ function AppLista() {
     var vidkraSzurt = szurtApp.filter(x => x.VidekortyaNev == feltetel.keresesiAdatok.videokartya);
   }
 
+  async function getHasProci(neve) {
+    try {
+      const response = await fetch(`https://localhost:44316/api/Processzor/0?name=${neve}`);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
   function prociSzures() {
-    var prociraSzurt = szurtApp.filter(x => x.ProcesszorNev == feltetel.keresesiAdatok.processzor);
+    if(feltetel.keresesiAdatok.processzor != '-'){
+      var prociraSzurt = szurtApp.filter(x => console.log(melyikProcesszorJobb(feltetel.keresesiAdatok, x)));
+      console.log()
+      setSzurtApp(prociraSzurt)
+      console.log(prociraSzurt)
+    } 
+  }
+  function melyikProcesszorJobb(alap, hasonlitott) {
+    // Processzormagok számának összehasonlítása
+    console.log(alap)
+    console.log(hasonlitott.ProcesszorMagokSzama)
+    if (alap.ProcesszorMagokSzama < hasonlitott.ProcesszorMagokSzama) {
+      return false;
+    } else if (alap.ProcesszorMagokSzama >= hasonlitott.ProcesszorMagokSzama) {
+      return true;
+    }
+    
+    /*
+    // Szálak számának összehasonlítása
+    if (alap.SzalakSzama > hasonlitott.SzalakSzama) {
+      return false;
+    } else if (alap.SzalakSzama < hasonlitott.SzalakSzama) {
+      return true;
+    }
+  
+    // Processzor frekvencia (órajel) összehasonlítása
+    if (alap.ProcesszorFrekvencia > hasonlitott.ProcesszorFrekvencia) {
+      return false;
+    } else if (alap.ProcesszorFrekvencia < hasonlitott.ProcesszorFrekvencia) {
+      return true;
+    }
+  
+    // Integrált videokártya figyelembe vétele
+    if (alap.IntegraltVideokartya && !hasonlitott.IntegraltVideokartya) {
+      return false;
+    } else if (!alap.IntegraltVideokartya && hasonlitott.IntegraltVideokartya) {
+      return true;
+    }
+  
+    // Támogatott memória típus figyelembe vétele
+    if (alap.TamogatottMemoriatipus > hasonlitott.TamogatottMemoriatipus) {
+      return false;
+    } else if (alap.TamogatottMemoriatipus < hasonlitott.TamogatottMemoriatipus) {
+      return true;
+    }
+    */
+    // Ha minden egyenlő, nincs különbség
+    //return true;
   }
 
   function opSzures() {
@@ -80,33 +137,38 @@ function AppLista() {
   }
 
   function ramSzures() {
-    if(feltetel.keresesiAdatok.ram != '-'){
+    if(feltetel.keresesiAdatok.ram != ''){
       var ramraSzurt = szurtApp.filter(x => x.RamMeret <= feltetel.keresesiAdatok.ram);
       setSzurtApp(ramraSzurt);
     }
   }
 
   function tarSzures() {
-    var tarraSzurt = szurtApp.filter(x => x.Tarhely == feltetel.keresesiAdatok.tarhely);
+    if(feltetel.keresesiAdatok.tarhely != ''){
+      var tarraSzurt = szurtApp.filter(x => x.Tarhely <= feltetel.keresesiAdatok.tarhely);
+      setSzurtApp(tarraSzurt);
+    }
   }
 
   const [szurtAlap, setSzurtAlap] = useState(false);
 
-function szur() {
-  setSzurtApp(mindenApp);
-  setSzurtAlap(true);
-}
-useEffect(() => {
-  if (szurtAlap) {
-    nevSzures();
-    kategoriaSzures();
-    ramSzures();
-    opSzures();
-    setSzurtAlap(false);
+  function szur() {
+    setSzurtApp(mindenApp);
+    setSzurtAlap(true);
   }
-}, [szurtApp, szurtAlap]);
+  useEffect(() => {
+    if (szurtAlap) {
+      nevSzures();
+      kategoriaSzures();
+      ramSzures();
+      prociSzures();
+      opSzures();
+      tarSzures();
+      setSzurtAlap(false);
+    }
+  }, [szurtApp, szurtAlap]);
 
-  return (
+return (
     <div className="kartyak">
       {betoltA ? console.log('Betöltés folyamatban !') : mindenElemBetoltese()}
       
