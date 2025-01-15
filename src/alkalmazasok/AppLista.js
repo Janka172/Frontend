@@ -23,7 +23,7 @@ function AppLista() {
       setMindenApp(data);
       setSzurtApp(data);
       setBetoltA(false);
-      console.log(mindenApp)
+      console.log(data)
     } catch (error) {
       console.error(error);
     }
@@ -65,73 +65,78 @@ function AppLista() {
     } 
   }
 
-  function vidkSzures() {
-    var vidkraSzurt = szurtApp.filter(x => x.VidekortyaNev == feltetel.keresesiAdatok.videokartya);
-  }
-
-  async function getHasProci(neve) {
+  const [hasVid, setHasVid] = useState('');
+  async function getHasVidi(neve) {
     try {
-      const response = await fetch(`https://localhost:44316/api/Processzor/0?name=${neve}`);
+      const response = await fetch(`https://localhost:44316/api/Videokartya/0?name=${neve}`);
       const data = await response.json();
-      return data;
+      setHasVid(data);
     } catch (error) {
       console.error(error);
     }
   }
+  useEffect(() => {
+    if (hasVid && hasVid !== '') {
+      vidiSz(hasVid);
+    }
+  }, [hasVid]);
+  function vidiSz(hasV) {
+    const vidkraSzurt = szurtApp.filter(x => 
+      melyikVideokartyaJobb(hasV, x)
+    );
+    setSzurtApp(vidkraSzurt);
+  }
+  function vidkSzures() {
+    if (feltetel.keresesiAdatok.videokartya !== '-') {
+      getHasVidi(feltetel.keresesiAdatok.videokartya);
+    }
+  }
+  function melyikVideokartyaJobb(alap, hasonlitott) {
+    if (alap.vram <= hasonlitott.VideokartyaVram) {
+      return true;
+    } else if (alap.vram > hasonlitott.VideokartyaVram) {
+      return false;
+    }
+  }
+
+  const [hasonlitott, setHasonlitott] = useState('');
+  async function getHasProci(neve) {
+    try {
+      const response = await fetch(`https://localhost:44316/api/Processzor/0?name=${neve}`);
+      const data = await response.json();
+      setHasonlitott(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  useEffect(() => {
+    if (hasonlitott) {
+      prociSz(hasonlitott);
+    }
+  }, [hasonlitott]);
   function prociSzures() {
-    if(feltetel.keresesiAdatok.processzor != '-'){
-      var prociraSzurt = szurtApp.filter(x => console.log(melyikProcesszorJobb(feltetel.keresesiAdatok, x)));
-      console.log()
-      setSzurtApp(prociraSzurt)
-      console.log(prociraSzurt)
-    } 
+    if (feltetel.keresesiAdatok.processzor != '-') {
+      getHasProci(feltetel.keresesiAdatok.processzor);
+    }
+  }
+  function prociSz(hason) {
+    const prociraSzurt = szurtApp.filter(x => 
+      melyikProcesszorJobb(hason, x)
+    );
+    setSzurtApp(prociraSzurt);
   }
   function melyikProcesszorJobb(alap, hasonlitott) {
-    // Processzormagok számának összehasonlítása
-    console.log(alap)
-    console.log(hasonlitott.ProcesszorMagokSzama)
-    if (alap.ProcesszorMagokSzama < hasonlitott.ProcesszorMagokSzama) {
+    if (alap.ProcesszormagokSzama < hasonlitott.ProcesszorMagokSzama) {
       return false;
-    } else if (alap.ProcesszorMagokSzama >= hasonlitott.ProcesszorMagokSzama) {
+    } else if (alap.ProcesszormagokSzama
+      >= hasonlitott.ProcesszorMagokSzama) {
       return true;
     }
-    
-    /*
-    // Szálak számának összehasonlítása
-    if (alap.SzalakSzama > hasonlitott.SzalakSzama) {
-      return false;
-    } else if (alap.SzalakSzama < hasonlitott.SzalakSzama) {
-      return true;
-    }
-  
-    // Processzor frekvencia (órajel) összehasonlítása
-    if (alap.ProcesszorFrekvencia > hasonlitott.ProcesszorFrekvencia) {
-      return false;
-    } else if (alap.ProcesszorFrekvencia < hasonlitott.ProcesszorFrekvencia) {
-      return true;
-    }
-  
-    // Integrált videokártya figyelembe vétele
-    if (alap.IntegraltVideokartya && !hasonlitott.IntegraltVideokartya) {
-      return false;
-    } else if (!alap.IntegraltVideokartya && hasonlitott.IntegraltVideokartya) {
-      return true;
-    }
-  
-    // Támogatott memória típus figyelembe vétele
-    if (alap.TamogatottMemoriatipus > hasonlitott.TamogatottMemoriatipus) {
-      return false;
-    } else if (alap.TamogatottMemoriatipus < hasonlitott.TamogatottMemoriatipus) {
-      return true;
-    }
-    */
-    // Ha minden egyenlő, nincs különbség
-    //return true;
   }
 
   function opSzures() {
-    if(feltetel.keresesiAdatok.videokartya != '-'){
-      var opraSzurt = szurtApp.filter(x => x.VidekortyaNev == feltetel.keresesiAdatok.videokartya);
+    if(feltetel.keresesiAdatok.opRendszer != '-'){
+      var opraSzurt = szurtApp.filter(x => x.OprendszerNev == feltetel.keresesiAdatok.opRendszer);
       setSzurtApp(opraSzurt);
     }
   }
@@ -160,9 +165,10 @@ function AppLista() {
     if (szurtAlap) {
       nevSzures();
       kategoriaSzures();
-      ramSzures();
+      vidkSzures();
       prociSzures();
       opSzures();
+      ramSzures();
       tarSzures();
       setSzurtAlap(false);
     }
