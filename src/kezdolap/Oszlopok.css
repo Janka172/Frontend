@@ -13,6 +13,10 @@
   justify-content: center;
 }
 
+.balOszlop{
+  background-color: rgba(196, 84, 84, 0.8);
+}
+
 @media (max-width: 767px) {
   .ketOszlop {
     display: flex;
@@ -55,7 +59,6 @@
   
   .balOszlop {
     padding: 1vw;
-    background-color: rgb(194, 52, 52, 0.8);
     border-radius: 3vw 0vw;
     margin: 3vw;
   }
@@ -84,7 +87,6 @@
   
   .balOszlop {
     padding: 1vw;
-    background-color: rgb(194, 52, 52, 0.8);
     border-radius: 3vw 0vw;
   }
 
@@ -110,7 +112,6 @@
   
   .balOszlop {
     padding: 1vw;
-    background-color: rgb(194, 52, 52, 0.8);
     border-radius: 3vw 0vw;
   }
 

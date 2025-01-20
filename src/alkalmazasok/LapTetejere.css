@@ -3,8 +3,8 @@
   bottom: 3vw;
   left: 0.8vw;
   padding: 0.3vw 0.5vw;
-  background-color: #8c2121;
-  color: white;
+  background-color: rgba(165, 67, 67, 0.8);
+  color: rgba(255, 255, 255, 0.644);
   border: none;
   border-radius: 15vw;
   cursor: pointer;

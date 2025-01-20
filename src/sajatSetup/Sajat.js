@@ -39,7 +39,7 @@ function Sajat() {
       console.error(error);
     }
   }
-  useEffect(() => { getMindenVideokartya(); }, []);
+  useEffect(() => { getMindenVideokartya(); }, [betoltA]);
 
   // A processzor adatok lekérése
   async function getMindenProcesszor() {
@@ -52,7 +52,7 @@ function Sajat() {
       console.error(error);
     }
   }
-  useEffect(() => { getMindenProcesszor(); }, []);
+  useEffect(() => { getMindenProcesszor(); }, [betoltA]);
 
   // A Op rendsze4r adatok lekérése
   async function getMindenOpRendszer() {
@@ -65,7 +65,7 @@ function Sajat() {
       console.error(error);
     }
   }
-  useEffect(() => { getMindenOpRendszer(); }, []);
+  useEffect(() => { getMindenOpRendszer(); }, [betoltA]);
 
   // A ram adatok lekérése
   async function getMindenRam() {
@@ -78,7 +78,7 @@ function Sajat() {
       console.error(error);
     }
   }
-  useEffect(() => { getMindenRam(); }, []);
+  useEffect(() => { getMindenRam(); }, [betoltA]);
 
   // A alaplap adatok lekérése
   async function getMindenAlaplap() {
@@ -91,7 +91,7 @@ function Sajat() {
       console.error(error);
     }
   }
-  useEffect(() => { getMindenAlaplap(); }, []);
+  useEffect(() => { getMindenAlaplap(); }, [betoltA]);
 
   // Csak akkor fut le, ha minden adat betöltődött
   function mindenBetolotott() {

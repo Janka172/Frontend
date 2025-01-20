@@ -78,9 +78,10 @@
 }
 
 .szuroMenu{
-    background-color: rgb(194, 52, 52, 0.5);
+    background-color: rgba(190, 90, 90, 0.7);
     margin-top: 1vw;
     padding: 3vw;
+    border-radius: 3vw 3vw 0vw 0vw;
 }
 
 .szuroMenu p{
@@ -129,6 +130,34 @@ option:hover{
 
 h2{
     font-size: 2vw;
+}
+
+.teljesReszletMenu{
+    background-color: rgba(117, 84, 84, 0.7);
+    padding: 3.5vw;
+    border-radius: 2vw;
+    margin-bottom: none;
+}
+
+.menuCimsor{
+    width: 70%;
+    display: flex;
+    margin: auto;
+    margin-top: 0%;
+}
+
+.kivalasztottNeve{
+    font-size: 2vw;
+}
+
+.hianyUzi{
+    font-size: 1.5vw;
+    margin: auto;
+    font-weight: bold;
+}
+
+.gorgetoDiv{
+    margin-bottom: 5vw;
 }
 
 @media (max-width: 767px){

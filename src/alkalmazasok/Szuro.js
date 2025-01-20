@@ -76,7 +76,7 @@ function Szuro() {
 
   const kicsie = window.innerWidth <= 767;
 
-  const [hatter, setHatter] = useState('rgb(194, 52, 52, 0.5)');
+  const [hatter, setHatter] = useState('rgba(196, 84, 84, 0.8)');
   const [displ, setDispl] = useState('block');
   const [megnyitva, setMegnyitva] = useState(true);
 
@@ -84,11 +84,11 @@ function Szuro() {
     if (kicsie) {
       setMegnyitva(false);
       setDispl('none');
-      setHatter('rgb(194, 52, 52, 0)');
+      setHatter('rgba(196, 84, 84, 0)');
     } else {
       setMegnyitva(true);
       setDispl('block');
-      setHatter('rgb(194, 52, 52, 0.5)');
+      setHatter('rgba(201, 95, 95, 0.8)');
     }
   }, [kicsie]);
 
@@ -96,11 +96,11 @@ function Szuro() {
     if (!megnyitva) {
       setMegnyitva(true);
       setDispl('block');
-      setHatter('rgb(194, 52, 52, 0.5)');
+      setHatter('rgba(201, 95, 95, 0.8)');
     } else {
       setMegnyitva(false);
       setDispl('none');
-      setHatter('rgb(194, 52, 52, 0)');
+      setHatter('rgba(196, 84, 84, 0)');
     }
   }
 
